@@ -1,0 +1,16 @@
+import { Component } from '@angular/core';
+import { BaseComponentWithTheme } from '../../utils';
+import * as i0 from "@angular/core";
+export class PButton extends BaseComponentWithTheme {
+}
+PButton.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PButton, deps: null, target: i0.ɵɵFactoryTarget.Component });
+PButton.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.10", type: PButton, selector: "p-button,[p-button]", inputs: { aria: "aria", disabled: "disabled", hideLabel: "hideLabel", icon: "icon", iconSource: "iconSource", loading: "loading", name: "name", theme: "theme", type: "type", value: "value", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PButton, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'p-button,[p-button]',
+                    template: '<ng-content />',
+                    inputs: ['aria', 'disabled', 'hideLabel', 'icon', 'iconSource', 'loading', 'name', 'theme', 'type', 'value', 'variant']
+                }]
+        }] });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnV0dG9uLndyYXBwZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9hbmd1bGFyLXdyYXBwZXIvc3JjL2xpYi9jb21wb25lbnRzL2J1dHRvbi53cmFwcGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDMUMsT0FBTyxFQUFFLHNCQUFzQixFQUFFLE1BQU0sYUFBYSxDQUFDOztBQVFyRCxNQUFNLE9BQU8sT0FBUSxTQUFRLHNCQUFzQjs7cUdBQXRDLE9BQU87eUZBQVAsT0FBTyxzU0FIUixnQkFBZ0I7NEZBR2YsT0FBTztrQkFMbkIsU0FBUzttQkFBQztvQkFDVCxRQUFRLEVBQUUscUJBQXFCO29CQUMvQixRQUFRLEVBQUUsZ0JBQWdCO29CQUMxQixNQUFNLEVBQUUsQ0FBQyxNQUFNLEVBQUUsVUFBVSxFQUFFLFdBQVcsRUFBRSxNQUFNLEVBQUUsWUFBWSxFQUFFLFNBQVMsRUFBRSxNQUFNLEVBQUUsT0FBTyxFQUFFLE1BQU0sRUFBRSxPQUFPLEVBQUUsU0FBUyxDQUFDO2lCQUN4SCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgQmFzZUNvbXBvbmVudFdpdGhUaGVtZSB9IGZyb20gJy4uLy4uL3V0aWxzJztcbmltcG9ydCB0eXBlIHsgU2VsZWN0ZWRBcmlhQXR0cmlidXRlcywgQnV0dG9uQXJpYUF0dHJpYnV0ZSwgQnJlYWtwb2ludEN1c3RvbWl6YWJsZSwgQnV0dG9uSWNvbiwgVGhlbWUsIEJ1dHRvblR5cGUsIEJ1dHRvblZhcmlhbnQgfSBmcm9tICcuLi90eXBlcyc7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ3AtYnV0dG9uLFtwLWJ1dHRvbl0nLFxuICB0ZW1wbGF0ZTogJzxuZy1jb250ZW50IC8+JyxcbiAgaW5wdXRzOiBbJ2FyaWEnLCAnZGlzYWJsZWQnLCAnaGlkZUxhYmVsJywgJ2ljb24nLCAnaWNvblNvdXJjZScsICdsb2FkaW5nJywgJ25hbWUnLCAndGhlbWUnLCAndHlwZScsICd2YWx1ZScsICd2YXJpYW50J11cbn0pXG5leHBvcnQgY2xhc3MgUEJ1dHRvbiBleHRlbmRzIEJhc2VDb21wb25lbnRXaXRoVGhlbWUge1xuICBhcmlhPzogU2VsZWN0ZWRBcmlhQXR0cmlidXRlczxCdXR0b25BcmlhQXR0cmlidXRlPjtcbiAgZGlzYWJsZWQ/OiBib29sZWFuO1xuICBoaWRlTGFiZWw/OiBCcmVha3BvaW50Q3VzdG9taXphYmxlPGJvb2xlYW4+O1xuICBpY29uPzogQnV0dG9uSWNvbjtcbiAgaWNvblNvdXJjZT86IHN0cmluZztcbiAgbG9hZGluZz86IGJvb2xlYW47XG4gIG5hbWU/OiBzdHJpbmc7XG4gIGRlY2xhcmUgdGhlbWU/OiBUaGVtZTtcbiAgdHlwZT86IEJ1dHRvblR5cGU7XG4gIHZhbHVlPzogc3RyaW5nO1xuICB2YXJpYW50PzogQnV0dG9uVmFyaWFudDtcbn0iXX0=

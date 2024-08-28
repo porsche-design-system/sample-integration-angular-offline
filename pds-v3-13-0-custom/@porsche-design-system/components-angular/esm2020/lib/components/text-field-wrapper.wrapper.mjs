@@ -1,0 +1,21 @@
+import { Component, EventEmitter } from '@angular/core';
+import { BaseComponentWithTheme } from '../../utils';
+import * as i0 from "@angular/core";
+export class PTextFieldWrapper extends BaseComponentWithTheme {
+    constructor() {
+        super(...arguments);
+        this.action = new EventEmitter();
+    }
+}
+PTextFieldWrapper.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PTextFieldWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
+PTextFieldWrapper.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.10", type: PTextFieldWrapper, selector: "p-text-field-wrapper,[p-text-field-wrapper]", inputs: { actionIcon: "actionIcon", actionLoading: "actionLoading", description: "description", hideLabel: "hideLabel", label: "label", message: "message", showCharacterCount: "showCharacterCount", showCounter: "showCounter", showPasswordToggle: "showPasswordToggle", state: "state", submitButton: "submitButton", theme: "theme", unit: "unit", unitPosition: "unitPosition" }, outputs: { action: "action" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PTextFieldWrapper, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'p-text-field-wrapper,[p-text-field-wrapper]',
+                    template: '<ng-content />',
+                    inputs: ['actionIcon', 'actionLoading', 'description', 'hideLabel', 'label', 'message', 'showCharacterCount', 'showCounter', 'showPasswordToggle', 'state', 'submitButton', 'theme', 'unit', 'unitPosition'],
+                    outputs: ['action']
+                }]
+        }] });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGV4dC1maWVsZC13cmFwcGVyLndyYXBwZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9hbmd1bGFyLXdyYXBwZXIvc3JjL2xpYi9jb21wb25lbnRzL3RleHQtZmllbGQtd3JhcHBlci53cmFwcGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsWUFBWSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQ3hELE9BQU8sRUFBRSxzQkFBc0IsRUFBRSxNQUFNLGFBQWEsQ0FBQzs7QUFTckQsTUFBTSxPQUFPLGlCQUFrQixTQUFRLHNCQUFzQjtJQU43RDs7UUFzQkUsV0FBTSxHQUFHLElBQUksWUFBWSxFQUFxQixDQUFDO0tBQ2hEOzsrR0FqQlksaUJBQWlCO21HQUFqQixpQkFBaUIsaWdCQUpsQixnQkFBZ0I7NEZBSWYsaUJBQWlCO2tCQU43QixTQUFTO21CQUFDO29CQUNULFFBQVEsRUFBRSw2Q0FBNkM7b0JBQ3ZELFFBQVEsRUFBRSxnQkFBZ0I7b0JBQzFCLE1BQU0sRUFBRSxDQUFDLFlBQVksRUFBRSxlQUFlLEVBQUUsYUFBYSxFQUFFLFdBQVcsRUFBRSxPQUFPLEVBQUUsU0FBUyxFQUFFLG9CQUFvQixFQUFFLGFBQWEsRUFBRSxvQkFBb0IsRUFBRSxPQUFPLEVBQUUsY0FBYyxFQUFFLE9BQU8sRUFBRSxNQUFNLEVBQUUsY0FBYyxDQUFDO29CQUM1TSxPQUFPLEVBQUUsQ0FBQyxRQUFRLENBQUM7aUJBQ3BCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBFdmVudEVtaXR0ZXIgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEJhc2VDb21wb25lbnRXaXRoVGhlbWUgfSBmcm9tICcuLi8uLi91dGlscyc7XG5pbXBvcnQgdHlwZSB7IFRleHRGaWVsZFdyYXBwZXJBY3Rpb25JY29uLCBCcmVha3BvaW50Q3VzdG9taXphYmxlLCBUZXh0RmllbGRXcmFwcGVyU3RhdGUsIFRoZW1lLCBUZXh0RmllbGRXcmFwcGVyVW5pdFBvc2l0aW9uIH0gZnJvbSAnLi4vdHlwZXMnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdwLXRleHQtZmllbGQtd3JhcHBlcixbcC10ZXh0LWZpZWxkLXdyYXBwZXJdJyxcbiAgdGVtcGxhdGU6ICc8bmctY29udGVudCAvPicsXG4gIGlucHV0czogWydhY3Rpb25JY29uJywgJ2FjdGlvbkxvYWRpbmcnLCAnZGVzY3JpcHRpb24nLCAnaGlkZUxhYmVsJywgJ2xhYmVsJywgJ21lc3NhZ2UnLCAnc2hvd0NoYXJhY3RlckNvdW50JywgJ3Nob3dDb3VudGVyJywgJ3Nob3dQYXNzd29yZFRvZ2dsZScsICdzdGF0ZScsICdzdWJtaXRCdXR0b24nLCAndGhlbWUnLCAndW5pdCcsICd1bml0UG9zaXRpb24nXSxcbiAgb3V0cHV0czogWydhY3Rpb24nXVxufSlcbmV4cG9ydCBjbGFzcyBQVGV4dEZpZWxkV3JhcHBlciBleHRlbmRzIEJhc2VDb21wb25lbnRXaXRoVGhlbWUge1xuICBhY3Rpb25JY29uPzogVGV4dEZpZWxkV3JhcHBlckFjdGlvbkljb247XG4gIGFjdGlvbkxvYWRpbmc/OiBib29sZWFuO1xuICBkZXNjcmlwdGlvbj86IHN0cmluZztcbiAgaGlkZUxhYmVsPzogQnJlYWtwb2ludEN1c3RvbWl6YWJsZTxib29sZWFuPjtcbiAgbGFiZWw/OiBzdHJpbmc7XG4gIG1lc3NhZ2U/OiBzdHJpbmc7XG4gIC8qKiBAZGVwcmVjYXRlZCAqL1xuICBzaG93Q2hhcmFjdGVyQ291bnQ/OiBib29sZWFuO1xuICBzaG93Q291bnRlcj86IGJvb2xlYW47XG4gIHNob3dQYXNzd29yZFRvZ2dsZT86IGJvb2xlYW47XG4gIHN0YXRlPzogVGV4dEZpZWxkV3JhcHBlclN0YXRlO1xuICBzdWJtaXRCdXR0b24/OiBib29sZWFuO1xuICBkZWNsYXJlIHRoZW1lPzogVGhlbWU7XG4gIHVuaXQ/OiBzdHJpbmc7XG4gIHVuaXRQb3NpdGlvbj86IFRleHRGaWVsZFdyYXBwZXJVbml0UG9zaXRpb247XG4gIGFjdGlvbiA9IG5ldyBFdmVudEVtaXR0ZXI8Q3VzdG9tRXZlbnQ8dm9pZD4+KCk7XG59Il19

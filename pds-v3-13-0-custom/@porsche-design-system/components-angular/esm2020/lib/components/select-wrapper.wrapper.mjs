@@ -1,0 +1,16 @@
+import { Component } from '@angular/core';
+import { BaseComponentWithTheme } from '../../utils';
+import * as i0 from "@angular/core";
+export class PSelectWrapper extends BaseComponentWithTheme {
+}
+PSelectWrapper.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PSelectWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
+PSelectWrapper.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.10", type: PSelectWrapper, selector: "p-select-wrapper,[p-select-wrapper]", inputs: { description: "description", dropdownDirection: "dropdownDirection", filter: "filter", hideLabel: "hideLabel", label: "label", message: "message", native: "native", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PSelectWrapper, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'p-select-wrapper,[p-select-wrapper]',
+                    template: '<ng-content />',
+                    inputs: ['description', 'dropdownDirection', 'filter', 'hideLabel', 'label', 'message', 'native', 'state', 'theme']
+                }]
+        }] });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2VsZWN0LXdyYXBwZXIud3JhcHBlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL2FuZ3VsYXItd3JhcHBlci9zcmMvbGliL2NvbXBvbmVudHMvc2VsZWN0LXdyYXBwZXIud3JhcHBlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQzFDLE9BQU8sRUFBRSxzQkFBc0IsRUFBRSxNQUFNLGFBQWEsQ0FBQzs7QUFRckQsTUFBTSxPQUFPLGNBQWUsU0FBUSxzQkFBc0I7OzRHQUE3QyxjQUFjO2dHQUFkLGNBQWMsa1RBSGYsZ0JBQWdCOzRGQUdmLGNBQWM7a0JBTDFCLFNBQVM7bUJBQUM7b0JBQ1QsUUFBUSxFQUFFLHFDQUFxQztvQkFDL0MsUUFBUSxFQUFFLGdCQUFnQjtvQkFDMUIsTUFBTSxFQUFFLENBQUMsYUFBYSxFQUFFLG1CQUFtQixFQUFFLFFBQVEsRUFBRSxXQUFXLEVBQUUsT0FBTyxFQUFFLFNBQVMsRUFBRSxRQUFRLEVBQUUsT0FBTyxFQUFFLE9BQU8sQ0FBQztpQkFDcEgiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEJhc2VDb21wb25lbnRXaXRoVGhlbWUgfSBmcm9tICcuLi8uLi91dGlscyc7XG5pbXBvcnQgdHlwZSB7IFNlbGVjdFdyYXBwZXJEcm9wZG93bkRpcmVjdGlvbiwgQnJlYWtwb2ludEN1c3RvbWl6YWJsZSwgU2VsZWN0V3JhcHBlclN0YXRlLCBUaGVtZSB9IGZyb20gJy4uL3R5cGVzJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAncC1zZWxlY3Qtd3JhcHBlcixbcC1zZWxlY3Qtd3JhcHBlcl0nLFxuICB0ZW1wbGF0ZTogJzxuZy1jb250ZW50IC8+JyxcbiAgaW5wdXRzOiBbJ2Rlc2NyaXB0aW9uJywgJ2Ryb3Bkb3duRGlyZWN0aW9uJywgJ2ZpbHRlcicsICdoaWRlTGFiZWwnLCAnbGFiZWwnLCAnbWVzc2FnZScsICduYXRpdmUnLCAnc3RhdGUnLCAndGhlbWUnXVxufSlcbmV4cG9ydCBjbGFzcyBQU2VsZWN0V3JhcHBlciBleHRlbmRzIEJhc2VDb21wb25lbnRXaXRoVGhlbWUge1xuICBkZXNjcmlwdGlvbj86IHN0cmluZztcbiAgZHJvcGRvd25EaXJlY3Rpb24/OiBTZWxlY3RXcmFwcGVyRHJvcGRvd25EaXJlY3Rpb247XG4gIGZpbHRlcj86IGJvb2xlYW47XG4gIGhpZGVMYWJlbD86IEJyZWFrcG9pbnRDdXN0b21pemFibGU8Ym9vbGVhbj47XG4gIGxhYmVsPzogc3RyaW5nO1xuICBtZXNzYWdlPzogc3RyaW5nO1xuICBuYXRpdmU/OiBib29sZWFuO1xuICBzdGF0ZT86IFNlbGVjdFdyYXBwZXJTdGF0ZTtcbiAgZGVjbGFyZSB0aGVtZT86IFRoZW1lO1xufSJdfQ==

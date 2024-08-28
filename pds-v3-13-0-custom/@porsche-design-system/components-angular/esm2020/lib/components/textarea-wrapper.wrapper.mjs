@@ -1,0 +1,16 @@
+import { Component } from '@angular/core';
+import { BaseComponentWithTheme } from '../../utils';
+import * as i0 from "@angular/core";
+export class PTextareaWrapper extends BaseComponentWithTheme {
+}
+PTextareaWrapper.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PTextareaWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
+PTextareaWrapper.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.10", type: PTextareaWrapper, selector: "p-textarea-wrapper,[p-textarea-wrapper]", inputs: { description: "description", hideLabel: "hideLabel", label: "label", message: "message", showCharacterCount: "showCharacterCount", showCounter: "showCounter", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PTextareaWrapper, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'p-textarea-wrapper,[p-textarea-wrapper]',
+                    template: '<ng-content />',
+                    inputs: ['description', 'hideLabel', 'label', 'message', 'showCharacterCount', 'showCounter', 'state', 'theme']
+                }]
+        }] });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGV4dGFyZWEtd3JhcHBlci53cmFwcGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvYW5ndWxhci13cmFwcGVyL3NyYy9saWIvY29tcG9uZW50cy90ZXh0YXJlYS13cmFwcGVyLndyYXBwZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUMxQyxPQUFPLEVBQUUsc0JBQXNCLEVBQUUsTUFBTSxhQUFhLENBQUM7O0FBUXJELE1BQU0sT0FBTyxnQkFBaUIsU0FBUSxzQkFBc0I7OzhHQUEvQyxnQkFBZ0I7a0dBQWhCLGdCQUFnQixnVEFIakIsZ0JBQWdCOzRGQUdmLGdCQUFnQjtrQkFMNUIsU0FBUzttQkFBQztvQkFDVCxRQUFRLEVBQUUseUNBQXlDO29CQUNuRCxRQUFRLEVBQUUsZ0JBQWdCO29CQUMxQixNQUFNLEVBQUUsQ0FBQyxhQUFhLEVBQUUsV0FBVyxFQUFFLE9BQU8sRUFBRSxTQUFTLEVBQUUsb0JBQW9CLEVBQUUsYUFBYSxFQUFFLE9BQU8sRUFBRSxPQUFPLENBQUM7aUJBQ2hIIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBCYXNlQ29tcG9uZW50V2l0aFRoZW1lIH0gZnJvbSAnLi4vLi4vdXRpbHMnO1xuaW1wb3J0IHR5cGUgeyBCcmVha3BvaW50Q3VzdG9taXphYmxlLCBUZXh0YXJlYVdyYXBwZXJTdGF0ZSwgVGhlbWUgfSBmcm9tICcuLi90eXBlcyc7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ3AtdGV4dGFyZWEtd3JhcHBlcixbcC10ZXh0YXJlYS13cmFwcGVyXScsXG4gIHRlbXBsYXRlOiAnPG5nLWNvbnRlbnQgLz4nLFxuICBpbnB1dHM6IFsnZGVzY3JpcHRpb24nLCAnaGlkZUxhYmVsJywgJ2xhYmVsJywgJ21lc3NhZ2UnLCAnc2hvd0NoYXJhY3RlckNvdW50JywgJ3Nob3dDb3VudGVyJywgJ3N0YXRlJywgJ3RoZW1lJ11cbn0pXG5leHBvcnQgY2xhc3MgUFRleHRhcmVhV3JhcHBlciBleHRlbmRzIEJhc2VDb21wb25lbnRXaXRoVGhlbWUge1xuICBkZXNjcmlwdGlvbj86IHN0cmluZztcbiAgaGlkZUxhYmVsPzogQnJlYWtwb2ludEN1c3RvbWl6YWJsZTxib29sZWFuPjtcbiAgbGFiZWw/OiBzdHJpbmc7XG4gIG1lc3NhZ2U/OiBzdHJpbmc7XG4gIC8qKiBAZGVwcmVjYXRlZCAqL1xuICBzaG93Q2hhcmFjdGVyQ291bnQ/OiBib29sZWFuO1xuICBzaG93Q291bnRlcj86IGJvb2xlYW47XG4gIHN0YXRlPzogVGV4dGFyZWFXcmFwcGVyU3RhdGU7XG4gIGRlY2xhcmUgdGhlbWU/OiBUaGVtZTtcbn0iXX0=

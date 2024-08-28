@@ -1,0 +1,23 @@
+import { Component, EventEmitter } from '@angular/core';
+import { BaseComponentWithTheme } from '../../utils';
+import * as i0 from "@angular/core";
+export class PPagination extends BaseComponentWithTheme {
+    constructor() {
+        super(...arguments);
+        /** @deprecated */
+        this.pageChange = new EventEmitter();
+        this.update = new EventEmitter();
+    }
+}
+PPagination.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PPagination, deps: null, target: i0.ɵɵFactoryTarget.Component });
+PPagination.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "15.2.10", type: PPagination, selector: "p-pagination,[p-pagination]", inputs: { activePage: "activePage", allyLabel: "allyLabel", allyLabelNext: "allyLabelNext", allyLabelPage: "allyLabelPage", allyLabelPrev: "allyLabelPrev", intl: "intl", itemsPerPage: "itemsPerPage", maxNumberOfPageLinks: "maxNumberOfPageLinks", showLastPage: "showLastPage", theme: "theme", totalItemsCount: "totalItemsCount" }, outputs: { pageChange: "pageChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PPagination, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'p-pagination,[p-pagination]',
+                    template: '<ng-content />',
+                    inputs: ['activePage', 'allyLabel', 'allyLabelNext', 'allyLabelPage', 'allyLabelPrev', 'intl', 'itemsPerPage', 'maxNumberOfPageLinks', 'showLastPage', 'theme', 'totalItemsCount'],
+                    outputs: ['pageChange', 'update']
+                }]
+        }] });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnaW5hdGlvbi53cmFwcGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvYW5ndWxhci13cmFwcGVyL3NyYy9saWIvY29tcG9uZW50cy9wYWdpbmF0aW9uLndyYXBwZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSxZQUFZLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDeEQsT0FBTyxFQUFFLHNCQUFzQixFQUFFLE1BQU0sYUFBYSxDQUFDOztBQVNyRCxNQUFNLE9BQU8sV0FBWSxTQUFRLHNCQUFzQjtJQU52RDs7UUF1QkUsa0JBQWtCO1FBQ2xCLGVBQVUsR0FBRyxJQUFJLFlBQVksRUFBNEMsQ0FBQztRQUMxRSxXQUFNLEdBQUcsSUFBSSxZQUFZLEVBQTRDLENBQUM7S0FDdkU7O3lHQXBCWSxXQUFXOzZGQUFYLFdBQVcsNmRBSlosZ0JBQWdCOzRGQUlmLFdBQVc7a0JBTnZCLFNBQVM7bUJBQUM7b0JBQ1QsUUFBUSxFQUFFLDZCQUE2QjtvQkFDdkMsUUFBUSxFQUFFLGdCQUFnQjtvQkFDMUIsTUFBTSxFQUFFLENBQUMsWUFBWSxFQUFFLFdBQVcsRUFBRSxlQUFlLEVBQUUsZUFBZSxFQUFFLGVBQWUsRUFBRSxNQUFNLEVBQUUsY0FBYyxFQUFFLHNCQUFzQixFQUFFLGNBQWMsRUFBRSxPQUFPLEVBQUUsaUJBQWlCLENBQUM7b0JBQ2xMLE9BQU8sRUFBRSxDQUFDLFlBQVksRUFBRSxRQUFRLENBQUM7aUJBQ2xDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBFdmVudEVtaXR0ZXIgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IEJhc2VDb21wb25lbnRXaXRoVGhlbWUgfSBmcm9tICcuLi8uLi91dGlscyc7XG5pbXBvcnQgdHlwZSB7IFBhZ2luYXRpb25JbnRlcm5hdGlvbmFsaXphdGlvbiwgQnJlYWtwb2ludEN1c3RvbWl6YWJsZSwgUGFnaW5hdGlvbk1heE51bWJlck9mUGFnZUxpbmtzLCBQYWdpbmF0aW9uVXBkYXRlRXZlbnREZXRhaWwsIFRoZW1lIH0gZnJvbSAnLi4vdHlwZXMnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdwLXBhZ2luYXRpb24sW3AtcGFnaW5hdGlvbl0nLFxuICB0ZW1wbGF0ZTogJzxuZy1jb250ZW50IC8+JyxcbiAgaW5wdXRzOiBbJ2FjdGl2ZVBhZ2UnLCAnYWxseUxhYmVsJywgJ2FsbHlMYWJlbE5leHQnLCAnYWxseUxhYmVsUGFnZScsICdhbGx5TGFiZWxQcmV2JywgJ2ludGwnLCAnaXRlbXNQZXJQYWdlJywgJ21heE51bWJlck9mUGFnZUxpbmtzJywgJ3Nob3dMYXN0UGFnZScsICd0aGVtZScsICd0b3RhbEl0ZW1zQ291bnQnXSxcbiAgb3V0cHV0czogWydwYWdlQ2hhbmdlJywgJ3VwZGF0ZSddXG59KVxuZXhwb3J0IGNsYXNzIFBQYWdpbmF0aW9uIGV4dGVuZHMgQmFzZUNvbXBvbmVudFdpdGhUaGVtZSB7XG4gIGFjdGl2ZVBhZ2U6IG51bWJlcjtcbiAgLyoqIEBkZXByZWNhdGVkICovXG4gIGFsbHlMYWJlbD86IHN0cmluZztcbiAgLyoqIEBkZXByZWNhdGVkICovXG4gIGFsbHlMYWJlbE5leHQ/OiBzdHJpbmc7XG4gIC8qKiBAZGVwcmVjYXRlZCAqL1xuICBhbGx5TGFiZWxQYWdlPzogc3RyaW5nO1xuICAvKiogQGRlcHJlY2F0ZWQgKi9cbiAgYWxseUxhYmVsUHJldj86IHN0cmluZztcbiAgaW50bD86IFBhZ2luYXRpb25JbnRlcm5hdGlvbmFsaXphdGlvbjtcbiAgaXRlbXNQZXJQYWdlPzogbnVtYmVyO1xuICAvKiogQGRlcHJlY2F0ZWQgKi9cbiAgbWF4TnVtYmVyT2ZQYWdlTGlua3M/OiBCcmVha3BvaW50Q3VzdG9taXphYmxlPFBhZ2luYXRpb25NYXhOdW1iZXJPZlBhZ2VMaW5rcz47XG4gIHNob3dMYXN0UGFnZT86IGJvb2xlYW47XG4gIGRlY2xhcmUgdGhlbWU/OiBUaGVtZTtcbiAgdG90YWxJdGVtc0NvdW50OiBudW1iZXI7XG4gIC8qKiBAZGVwcmVjYXRlZCAqL1xuICBwYWdlQ2hhbmdlID0gbmV3IEV2ZW50RW1pdHRlcjxDdXN0b21FdmVudDxQYWdpbmF0aW9uVXBkYXRlRXZlbnREZXRhaWw+PigpO1xuICB1cGRhdGUgPSBuZXcgRXZlbnRFbWl0dGVyPEN1c3RvbUV2ZW50PFBhZ2luYXRpb25VcGRhdGVFdmVudERldGFpbD4+KCk7XG59Il19
