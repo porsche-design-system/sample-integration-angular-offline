@@ -2,7 +2,9 @@
   "name": "sample-integration-angular-offline",
   "version": "0.0.0",
   "scripts": {
-    "postinstall": "rm -rf ./node_modules/@angular-builders/custom-webpack/node_modules",
+    "postinstall": "rm -rf ./node_modules/@angular-builders/custom-webpack/node_modules && yarn copy-custom-pds-angular-build && yarn copy-custom-pds-js-build",
+    "copy-custom-pds-angular-build": "rm -rf ./node_modules/@porsche-design-system/components-angular && cp -r ./@porsche-design-system/components-angular/. ./node_modules/@porsche-design-system/components-angular",
+    "copy-custom-pds-js-build": "rm -rf ./node_modules/@porsche-design-system/components-js && cp -r ./@porsche-design-system/components-js/. ./node_modules/@porsche-design-system/components-js",
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --port 4200",
     "build": "ng build --configuration production --base-href /sample-integration-angular-offline/",
@@ -26,7 +28,6 @@
     "@angular/router": "18.1.3",
     "@porsche-design-system/components-angular": "3.13.0",
     "@porsche-design-system/utilities": "5.4.1",
-    "@porschehn/navigation": "3.5.0",
     "rxjs": "^7.8.1",
     "tslib": "^2.6.3",
     "zone.js": "~0.14.8"
