@@ -2620,35 +2620,35 @@ function requireAlignLabel7a9d9074 () {
 	return alignLabel7a9d9074;
 }
 
-var appGlobalsDcedc3f7 = {};
+var appGlobalsF638fc3f = {};
 
-var getCDNBaseURL406705a7 = {};
+var getCDNBaseURL6089b033 = {};
 
-var hasRequiredGetCDNBaseURL406705a7;
+var hasRequiredGetCDNBaseURL6089b033;
 
-function requireGetCDNBaseURL406705a7 () {
-	if (hasRequiredGetCDNBaseURL406705a7) return getCDNBaseURL406705a7;
-	hasRequiredGetCDNBaseURL406705a7 = 1;
+function requireGetCDNBaseURL6089b033 () {
+	if (hasRequiredGetCDNBaseURL6089b033) return getCDNBaseURL6089b033;
+	hasRequiredGetCDNBaseURL6089b033 = 1;
 
-	const getCDNBaseURL = () => "/assets";
+	const getCDNBaseURL = () => "./assets";
 
-	getCDNBaseURL406705a7.getCDNBaseURL = getCDNBaseURL;
+	getCDNBaseURL6089b033.getCDNBaseURL = getCDNBaseURL;
 
 	
-	return getCDNBaseURL406705a7;
+	return getCDNBaseURL6089b033;
 }
 
-var hasRequiredAppGlobalsDcedc3f7;
+var hasRequiredAppGlobalsF638fc3f;
 
-function requireAppGlobalsDcedc3f7 () {
-	if (hasRequiredAppGlobalsDcedc3f7) return appGlobalsDcedc3f7;
-	hasRequiredAppGlobalsDcedc3f7 = 1;
+function requireAppGlobalsF638fc3f () {
+	if (hasRequiredAppGlobalsF638fc3f) return appGlobalsF638fc3f;
+	hasRequiredAppGlobalsF638fc3f = 1;
 
 	const validateProps = requireValidateProps0357d75a();
-	const getCDNBaseURL = requireGetCDNBaseURL406705a7();
+	const getCDNBaseURL = requireGetCDNBaseURL6089b033();
 
-	const FONT_FACE_CDN_FILE_COM = 'font-face.min.2f74bd25421b077a109877cf15af00b0.css';
-	const FONT_FACE_CDN_FILE_CN = 'font-face.min.cn.2f74bd25421b077a109877cf15af00b0.css';
+	const FONT_FACE_CDN_FILE_COM = 'font-face.min.beb687c693679a511004e1d16efbbcfe.css';
+	const FONT_FACE_CDN_FILE_CN = 'font-face.min.cn.beb687c693679a511004e1d16efbbcfe.css';
 
 	const validatePartialUsage = () => {
 	    // TODO: before reactivating we need to be able to distinguish between Light DOM and/or Shadow DOM usage.
@@ -2743,10 +2743,10 @@ function requireAppGlobalsDcedc3f7 () {
 
 	const globalScripts = appGlobalScript;
 
-	appGlobalsDcedc3f7.globalScripts = globalScripts;
+	appGlobalsF638fc3f.globalScripts = globalScripts;
 
 	
-	return appGlobalsDcedc3f7;
+	return appGlobalsF638fc3f;
 }
 
 var bannerUtils2cc83734 = {};
@@ -10832,7 +10832,7 @@ function requirePCrest_cjs_entry () {
 	Object.defineProperty(pCrest_cjs_entry, '__esModule', { value: true });
 
 	const validateProps = requireValidateProps0357d75a();
-	const getCDNBaseURL = requireGetCDNBaseURL406705a7();
+	const getCDNBaseURL = requireGetCDNBaseURL6089b033();
 	const linkAriaAttribute = requireLinkAriaAttribute5de11e89();
 	const colorSchemeStyles = requireColorSchemeStyles4bc3d59c();
 
@@ -13001,7 +13001,7 @@ function requirePIcon_cjs_entry () {
 
 	const validateProps = requireValidateProps0357d75a();
 	const typographyTextColor = requireTypographyTextColor524bae09();
-	const getCDNBaseURL = requireGetCDNBaseURL406705a7();
+	const getCDNBaseURL = requireGetCDNBaseURL6089b033();
 	const warnIfDeprecatedPropValueIsUsed = requireWarnIfDeprecatedPropValueIsUsedEe150279();
 	const warnIfDeprecatedPropIsUsed = requireWarnIfDeprecatedPropIsUsed3823d086();
 	const theme = requireThemeBfc10573();
@@ -14319,7 +14319,7 @@ function requirePMarque_cjs_entry () {
 	Object.defineProperty(pMarque_cjs_entry, '__esModule', { value: true });
 
 	const validateProps = requireValidateProps0357d75a();
-	const getCDNBaseURL = requireGetCDNBaseURL406705a7();
+	const getCDNBaseURL = requireGetCDNBaseURL6089b033();
 	const linkAriaAttribute = requireLinkAriaAttribute5de11e89();
 	const warnIfDeprecatedComponentIsUsed = requireWarnIfDeprecatedComponentIsUsed3d190ca6();
 	const colorSchemeStyles = requireColorSchemeStyles4bc3d59c();
@@ -14925,7 +14925,7 @@ function requirePModelSignature_cjs_entry () {
 	const colorSchemeStyles = requireColorSchemeStyles4bc3d59c();
 	const schemedHighContrastMediaQuery = requireSchemedHighContrastMediaQuery462417a0();
 	const filtersPrimary = requireFiltersPrimary7e1fcfed();
-	const getCDNBaseURL = requireGetCDNBaseURL406705a7();
+	const getCDNBaseURL = requireGetCDNBaseURL6089b033();
 
 	const MODEL_SIGNATURES_MANIFEST = { "718": "718.min.d92dc0fe91e67bd51120d91c5cd1eb2f.svg", "911": "911.min.5c462658f9d472e90a139173414e8fdd.svg", "boxster": "boxster.min.5e7b22a1fa25004a4f97807d57f32b21.svg", "cayenne": "cayenne.min.4026ba6b335cc98e10592f900cf731e1.svg", "cayman": "cayman.min.c634f6f3de1d67610b2e4230e60337fb.svg", "macan": "macan.min.e38fbf34ed4f00066620901babd99af0.svg", "panamera": "panamera.min.d35913b252657f7c5cfcae74cfd61b26.svg", "taycan": "taycan.min.ba4e7c3cb86a78d626d4463b81be0f23.svg", "turbo-s": "turbo-s.min.8201d60c1b5e00daf9e23784fd199111.svg", "turbo": "turbo.min.cfde5de85fdc84be597dfad4402c5f6f.svg" };
 
@@ -23036,8 +23036,8 @@ function requirePorscheDesignSystem_cjs () {
 	Object.defineProperty(porscheDesignSystem_cjs, '__esModule', { value: true });
 
 	const validateProps = requireValidateProps0357d75a();
-	const appGlobals = requireAppGlobalsDcedc3f7();
-	requireGetCDNBaseURL406705a7();
+	const appGlobals = requireAppGlobalsF638fc3f();
+	requireGetCDNBaseURL6089b033();
 
 	/*
 	 Stencil Client Patch Browser v4.12.3 | MIT Licensed | https://stenciljs.com
@@ -23068,7 +23068,7 @@ function getDynamicModules() {
 	return dynamicModules || (dynamicModules = {
 		"/src/index.js": requireSrc,
 		"/src/lib/align-label-7a9d9074.js": requireAlignLabel7a9d9074,
-		"/src/lib/app-globals-dcedc3f7.js": requireAppGlobalsDcedc3f7,
+		"/src/lib/app-globals-f638fc3f.js": requireAppGlobalsF638fc3f,
 		"/src/lib/banner-utils-2cc83734.js": requireBannerUtils2cc83734,
 		"/src/lib/borderRadiusLarge-a0aa3a01.js": requireBorderRadiusLargeA0aa3a01,
 		"/src/lib/borderRadiusMedium-758b9411.js": requireBorderRadiusMedium758b9411,
@@ -23105,7 +23105,7 @@ function getDynamicModules() {
 		"/src/lib/form-styles-0c42541c.js": requireFormStyles0c42541c,
 		"/src/lib/get-button-base-aria-attributes-87c623da.js": requireGetButtonBaseAriaAttributes87c623da,
 		"/src/lib/getAttribute-9c66ed26.js": requireGetAttribute9c66ed26,
-		"/src/lib/getCDNBaseURL-406705a7.js": requireGetCDNBaseURL406705a7,
+		"/src/lib/getCDNBaseURL-6089b033.js": requireGetCDNBaseURL6089b033,
 		"/src/lib/getClickedItem-bf5d79f7.js": requireGetClickedItemBf5d79f7,
 		"/src/lib/getClosestHTMLElement-83d01a84.js": requireGetClosestHTMLElement83d01a84,
 		"/src/lib/getDirectChildHTMLElement-1cd43c92.js": requireGetDirectChildHTMLElement1cd43c92,
@@ -29629,8 +29629,8 @@ function requireLoader_cjs () {
 	Object.defineProperty(loader_cjs, '__esModule', { value: true });
 
 	const validateProps = requireValidateProps0357d75a();
-	const appGlobals = requireAppGlobalsDcedc3f7();
-	requireGetCDNBaseURL406705a7();
+	const appGlobals = requireAppGlobalsF638fc3f();
+	requireGetCDNBaseURL6089b033();
 
 	const defineCustomElements = async (win, options) => {
 	  if (typeof window === 'undefined') return undefined;
