@@ -18,7 +18,7 @@ With the upcoming version 4 of the Porsche Design System, a new solution will be
 
 Copy the `./@porsche-design-system` folder and its contents from this repository into the **root directory** of **your** [Angular](https://angular.dev/installation) project.
 
-Next, copy the `./public/assets/porsche-design-system` directory into the same location in your project.
+Next, copy the `./public/assets/porsche-design-system` directory into the **same location** in **your** project.
 
 ### Step 2
 

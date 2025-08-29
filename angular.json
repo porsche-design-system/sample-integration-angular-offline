@@ -16,11 +16,13 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist",
-            "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
+            "indexTransform": "./index-html-transform.js",
+            "outputPath": "./dist",
+            "index": "src/index.html",
+            "main": "src/main.ts",
             "assets": [
               {
                 "glob": "**/*",
@@ -56,7 +58,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "@porsche-design-system/angular-offline:build:production"
