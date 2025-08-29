@@ -10,6 +10,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ci": "npm run build -- --base-href /sample-integration-angular-offline/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
