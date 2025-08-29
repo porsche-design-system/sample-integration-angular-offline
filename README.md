@@ -40,7 +40,28 @@ Extend the **scripts** section of your `package.json` file.
 }
 ```
 
-### Step 3
+### Step 4
+
+Exclude Porsche Design System from Angular's cache. 
+To achieve this, we can't selectively exclude a single package. 
+Instead, we have to disable the entire Angular cache.
+
+```
+// angular.json
+
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "cache": {
+      "enabled": false
+    }
+  },
+  …
+}
+```
+
+### Step 5
 
 Add the `@porsche-design-system/components-angular` npm package with version `3.29.0`.
 
@@ -48,7 +69,7 @@ Add the `@porsche-design-system/components-angular` npm package with version `3.
 npm install @porsche-design-system/components-angular@3.29.0
 ```
 
-### Step 4
+### Step 6
 
 Add the `PorscheDesignSystemModule` to the imports array of your `@Component` or `@NgModule` declaration, then integrate the Porsche Design System components you need.
 
@@ -81,7 +102,7 @@ export class App {
 <div class="…">…</div>
 ```
 
-### Step 5
+### Step 7
 
 Once the web application is built and served, open your browser's developer console.
 All Porsche Design System assets should then be loaded from `${YOUR_BASE_URL}`.
