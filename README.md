@@ -18,22 +18,9 @@ With the upcoming version 4 of the Porsche Design System, a new solution will be
 
 Copy the `./@porsche-design-system` folder and its contents from this repository into the **root directory** of **your** [Angular](https://angular.dev/installation) project.
 
+Next, copy the `./public/assets/porsche-design-system` directory into the same location in your project.
+
 ### Step 2
-
-To prepare for the next steps, you need to ensure that the `public/assets/porsche-design-system` directory is not tracked by Git.
-
-```
-// .gitignore
-
-…
-.vscode/*
-!.vscode/extensions.json
-.idea
-
-public/assets/porsche-design-system
-```
-
-### Step 3
 
 Extend the **scripts** section of your `package.json` file.
 
@@ -41,15 +28,14 @@ Extend the **scripts** section of your `package.json` file.
 // package.json
 
 "scripts": {
-  "postinstall": "npm run copy:@porsche-design-system/components-angular && npm run copy:@porsche-design-system/components-js && npm run copy:@porsche-design-system/assets",
+  "postinstall": "npm run copy:@porsche-design-system/components-angular && npm run copy:@porsche-design-system/components-js",
   "copy:@porsche-design-system/components-angular": "rm -rf ./node_modules/@porsche-design-system/components-angular && cp -r ./@porsche-design-system/components-angular/. ./node_modules/@porsche-design-system/components-angular",
   "copy:@porsche-design-system/components-js": "rm -rf ./node_modules/@porsche-design-system/components-js && cp -r ./@porsche-design-system/components-js/. ./node_modules/@porsche-design-system/components-js",
-  "copy:@porsche-design-system/assets": "rm -rf ./public/assets/porsche-design-system && mkdir -p ./public/assets/porsche-design-system && cp -r ./@porsche-design-system/assets/. ./public/assets/porsche-design-system",
   …
 }
 ```
 
-### Step 4
+### Step 3
 
 Exclude Porsche Design System from Angular's cache. 
 To achieve this, we can't selectively exclude a single package. 
@@ -70,7 +56,7 @@ Instead, we have to disable the entire Angular cache.
 }
 ```
 
-### Step 5
+### Step 4
 
 Add the `@porsche-design-system/components-angular` npm package with version `3.29.0`.
 
@@ -78,7 +64,7 @@ Add the `@porsche-design-system/components-angular` npm package with version `3.
 npm install @porsche-design-system/components-angular@3.29.0
 ```
 
-### Step 6
+### Step 5
 
 Add the `PorscheDesignSystemModule` to the imports array of your `@Component` or `@NgModule` declaration, then integrate the Porsche Design System components you need.
 
@@ -111,7 +97,7 @@ export class App {
 <div class="…">…</div>
 ```
 
-### Step 7
+### Step 6
 
 Once the web application is built and served, open your browser's developer console.
 All Porsche Design System assets should then be loaded from `${YOUR_BASE_URL}`.
