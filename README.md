@@ -48,6 +48,7 @@ Extend the **scripts** section of your `package.json` file.
   …
 }
 ```
+
 ### Step 4
 
 Exclude Porsche Design System from Angular's cache. 
