@@ -12,7 +12,9 @@
     "build": "ng build",
     "build:ci": "npm run build -- --base-href /sample-integration-angular-offline/",
     "watch": "ng build --watch --configuration development",
+    "serve": "serve dist",
     "test": "ng test",
+    "test:e2e": "playwright test --config=tests/e2e/config/playwright.config.ts",
     "npm:outdated": "npm outdated",
     "npm:upgrade": "npx npm-check-updates -u && npm install",
     "npm:remove": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
@@ -44,6 +46,7 @@
     "@angular/build": "^20.1.4",
     "@angular/cli": "^20.1.4",
     "@angular/compiler-cli": "^20.1.0",
+    "@playwright/test": "^1.55.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.10.0",
     "karma": "~6.4.0",
@@ -51,6 +54,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "serve": "^14.2.4",
     "typescript": "~5.9.2"
   },
   "volta": {
