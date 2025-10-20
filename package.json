@@ -46,7 +46,7 @@
     "@angular/build": "^20.1.4",
     "@angular/cli": "^20.1.4",
     "@angular/compiler-cli": "^20.1.0",
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "^1.56.1",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.10.0",
     "karma": "~6.4.0",
