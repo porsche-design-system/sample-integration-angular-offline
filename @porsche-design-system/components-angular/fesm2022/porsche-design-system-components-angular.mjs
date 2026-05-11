@@ -1,7 +1,8 @@
 import { load } from '@porsche-design-system/components-js';
 export { componentsReady } from '@porsche-design-system/components-js';
 import * as i0 from '@angular/core';
-import { InjectionToken, Component, ChangeDetectionStrategy, inject, EventEmitter, NgModule, Optional, Injectable } from '@angular/core';
+import { InjectionToken, Component, ChangeDetectionStrategy, inject, EventEmitter, forwardRef, NgModule, Optional, Injectable } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
 const THEME_TOKEN = new InjectionToken('pdsTheme');
@@ -16,10 +17,10 @@ class BaseComponent {
             this.el[prop] = props[prop].currentValue;
         }
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: BaseComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: BaseComponent, isStandalone: true, selector: "ng-component", usesOnChanges: true, ngImport: i0, template: '', isInline: true, changeDetection: i0.ChangeDetectionStrategy.OnPush });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: BaseComponent, deps: [{ token: i0.ChangeDetectorRef }, { token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: BaseComponent, isStandalone: true, selector: "ng-component", usesOnChanges: true, ngImport: i0, template: '', isInline: true, changeDetection: i0.ChangeDetectionStrategy.OnPush });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: BaseComponent, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: BaseComponent, decorators: [{
             type: Component,
             args: [{
                     template: '',
@@ -36,10 +37,10 @@ class BaseComponentWithTheme extends BaseComponent {
         // https://rafaelneto.dev/en/blog/unsubscribing-behaviorsubject-observable-angular/
         this.themeSubscription.unsubscribe();
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: BaseComponentWithTheme, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: BaseComponentWithTheme, isStandalone: true, selector: "ng-component", usesInheritance: true, ngImport: i0, template: '', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: BaseComponentWithTheme, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: BaseComponentWithTheme, isStandalone: true, selector: "ng-component", usesInheritance: true, ngImport: i0, template: '', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: BaseComponentWithTheme, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: BaseComponentWithTheme, decorators: [{
             type: Component,
             args: [{
                     template: '',
@@ -59,16 +60,33 @@ class PAccordion extends BaseComponentWithTheme {
     /** @deprecated */
     accordionChange = new EventEmitter();
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PAccordion, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PAccordion, isStandalone: false, selector: "p-accordion,[p-accordion]", inputs: { compact: "compact", heading: "heading", headingTag: "headingTag", open: "open", size: "size", sticky: "sticky", tag: "tag", theme: "theme" }, outputs: { accordionChange: "accordionChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PAccordion, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PAccordion, isStandalone: false, selector: "p-accordion,[p-accordion]", inputs: { compact: "compact", heading: "heading", headingTag: "headingTag", open: "open", size: "size", sticky: "sticky", tag: "tag", theme: "theme" }, outputs: { accordionChange: "accordionChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PAccordion, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PAccordion, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-accordion,[p-accordion]',
                     template: '<ng-content />',
                     inputs: ['compact', 'heading', 'headingTag', 'open', 'size', 'sticky', 'tag', 'theme'],
                     outputs: ['accordionChange', 'update'],
+                    standalone: false
+                }]
+        }] });
+
+class PAiTag extends BaseComponentWithTheme {
+    locale;
+    theme;
+    variant;
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PAiTag, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PAiTag, isStandalone: false, selector: "p-ai-tag,[p-ai-tag]", inputs: { locale: "locale", theme: "theme", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PAiTag, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'p-ai-tag,[p-ai-tag]',
+                    template: '<ng-content />',
+                    inputs: ['locale', 'theme', 'variant'],
                     standalone: false
                 }]
         }] });
@@ -86,10 +104,10 @@ class PBanner extends BaseComponentWithTheme {
     /** @deprecated */
     width;
     dismiss = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PBanner, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PBanner, isStandalone: false, selector: "p-banner,[p-banner]", inputs: { description: "description", dismissButton: "dismissButton", heading: "heading", headingTag: "headingTag", open: "open", persistent: "persistent", state: "state", theme: "theme", width: "width" }, outputs: { dismiss: "dismiss" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PBanner, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PBanner, isStandalone: false, selector: "p-banner,[p-banner]", inputs: { description: "description", dismissButton: "dismissButton", heading: "heading", headingTag: "headingTag", open: "open", persistent: "persistent", state: "state", theme: "theme", width: "width" }, outputs: { dismiss: "dismiss" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PBanner, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PBanner, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-banner,[p-banner]',
@@ -114,10 +132,10 @@ class PButton extends BaseComponentWithTheme {
     type;
     value;
     variant;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PButton, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PButton, isStandalone: false, selector: "p-button,[p-button]", inputs: { aria: "aria", compact: "compact", disabled: "disabled", form: "form", hideLabel: "hideLabel", icon: "icon", iconSource: "iconSource", loading: "loading", name: "name", theme: "theme", type: "type", value: "value", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PButton, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PButton, isStandalone: false, selector: "p-button,[p-button]", inputs: { aria: "aria", compact: "compact", disabled: "disabled", form: "form", hideLabel: "hideLabel", icon: "icon", iconSource: "iconSource", loading: "loading", name: "name", theme: "theme", type: "type", value: "value", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PButton, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PButton, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-button,[p-button]',
@@ -127,12 +145,13 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
                 }]
         }] });
 
+/** @deprecated since v3.32.0, will be removed with next major release. Use simple styles instead. */
 class PButtonGroup extends BaseComponent {
     direction;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PButtonGroup, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PButtonGroup, isStandalone: false, selector: "p-button-group,[p-button-group]", inputs: { direction: "direction" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PButtonGroup, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PButtonGroup, isStandalone: false, selector: "p-button-group,[p-button-group]", inputs: { direction: "direction" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PButtonGroup, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PButtonGroup, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-button-group,[p-button-group]',
@@ -161,10 +180,10 @@ class PButtonPure extends BaseComponentWithTheme {
     value;
     /** @deprecated */
     weight;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PButtonPure, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PButtonPure, isStandalone: false, selector: "p-button-pure,[p-button-pure]", inputs: { active: "active", alignLabel: "alignLabel", aria: "aria", disabled: "disabled", form: "form", hideLabel: "hideLabel", icon: "icon", iconSource: "iconSource", loading: "loading", name: "name", size: "size", stretch: "stretch", theme: "theme", type: "type", underline: "underline", value: "value", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PButtonPure, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PButtonPure, isStandalone: false, selector: "p-button-pure,[p-button-pure]", inputs: { active: "active", alignLabel: "alignLabel", aria: "aria", disabled: "disabled", form: "form", hideLabel: "hideLabel", icon: "icon", iconSource: "iconSource", loading: "loading", name: "name", size: "size", stretch: "stretch", theme: "theme", type: "type", underline: "underline", value: "value", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PButtonPure, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PButtonPure, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-button-pure,[p-button-pure]',
@@ -190,10 +209,10 @@ class PButtonTile extends BaseComponent {
     size;
     type;
     weight;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PButtonTile, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PButtonTile, isStandalone: false, selector: "p-button-tile,[p-button-tile]", inputs: { align: "align", aria: "aria", aspectRatio: "aspectRatio", background: "background", compact: "compact", description: "description", disabled: "disabled", gradient: "gradient", icon: "icon", iconSource: "iconSource", label: "label", loading: "loading", size: "size", type: "type", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PButtonTile, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PButtonTile, isStandalone: false, selector: "p-button-tile,[p-button-tile]", inputs: { align: "align", aria: "aria", aspectRatio: "aspectRatio", background: "background", compact: "compact", description: "description", disabled: "disabled", gradient: "gradient", icon: "icon", iconSource: "iconSource", label: "label", loading: "loading", size: "size", type: "type", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PButtonTile, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PButtonTile, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-button-tile,[p-button-tile]',
@@ -209,10 +228,10 @@ class PCanvas extends BaseComponentWithTheme {
     theme;
     sidebarEndDismiss = new EventEmitter();
     sidebarStartUpdate = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PCanvas, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PCanvas, isStandalone: false, selector: "p-canvas,[p-canvas]", inputs: { sidebarEndOpen: "sidebarEndOpen", sidebarStartOpen: "sidebarStartOpen", theme: "theme" }, outputs: { sidebarEndDismiss: "sidebarEndDismiss", sidebarStartUpdate: "sidebarStartUpdate" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PCanvas, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PCanvas, isStandalone: false, selector: "p-canvas,[p-canvas]", inputs: { sidebarEndOpen: "sidebarEndOpen", sidebarStartOpen: "sidebarStartOpen", theme: "theme" }, outputs: { sidebarEndDismiss: "sidebarEndDismiss", sidebarStartUpdate: "sidebarStartUpdate" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PCanvas, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PCanvas, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-canvas,[p-canvas]',
@@ -248,10 +267,10 @@ class PCarousel extends BaseComponentWithTheme {
     /** @deprecated */
     carouselChange = new EventEmitter();
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PCarousel, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PCarousel, isStandalone: false, selector: "p-carousel,[p-carousel]", inputs: { activeSlideIndex: "activeSlideIndex", alignControls: "alignControls", alignHeader: "alignHeader", aria: "aria", description: "description", disablePagination: "disablePagination", focusOnCenterSlide: "focusOnCenterSlide", gradientColor: "gradientColor", heading: "heading", headingSize: "headingSize", intl: "intl", pagination: "pagination", rewind: "rewind", skipLinkTarget: "skipLinkTarget", slidesPerPage: "slidesPerPage", theme: "theme", trimSpace: "trimSpace", width: "width", wrapContent: "wrapContent" }, outputs: { carouselChange: "carouselChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PCarousel, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PCarousel, isStandalone: false, selector: "p-carousel,[p-carousel]", inputs: { activeSlideIndex: "activeSlideIndex", alignControls: "alignControls", alignHeader: "alignHeader", aria: "aria", description: "description", disablePagination: "disablePagination", focusOnCenterSlide: "focusOnCenterSlide", gradientColor: "gradientColor", heading: "heading", headingSize: "headingSize", intl: "intl", pagination: "pagination", rewind: "rewind", skipLinkTarget: "skipLinkTarget", slidesPerPage: "slidesPerPage", theme: "theme", trimSpace: "trimSpace", width: "width", wrapContent: "wrapContent" }, outputs: { carouselChange: "carouselChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PCarousel, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PCarousel, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-carousel,[p-carousel]',
@@ -263,6 +282,9 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PCheckbox extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     checked;
     compact;
     disabled;
@@ -278,20 +300,59 @@ class PCheckbox extends BaseComponentWithTheme {
     theme;
     value;
     blur = new EventEmitter();
+    change = new EventEmitter();
+    /** @deprecated */
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PCheckbox, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PCheckbox, isStandalone: false, selector: "p-checkbox,[p-checkbox]", inputs: { checked: "checked", compact: "compact", disabled: "disabled", form: "form", hideLabel: "hideLabel", indeterminate: "indeterminate", label: "label", loading: "loading", message: "message", name: "name", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'checked', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PCheckbox, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PCheckbox, isStandalone: false, selector: "p-checkbox,[p-checkbox]", inputs: { checked: "checked", compact: "compact", disabled: "disabled", form: "form", hideLabel: "hideLabel", indeterminate: "indeterminate", label: "label", loading: "loading", message: "message", name: "name", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", update: "update" }, host: { listeners: { "change": "_onChange($event.target.checked)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PCheckbox),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PCheckbox, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PCheckbox, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-checkbox,[p-checkbox]',
                     template: '<ng-content />',
                     inputs: ['checked', 'compact', 'disabled', 'form', 'hideLabel', 'indeterminate', 'label', 'loading', 'message', 'name', 'required', 'state', 'theme', 'value'],
-                    outputs: ['blur', 'update'],
-                    standalone: false
+                    outputs: ['blur', 'change', 'update'],
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PCheckbox),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(change)': '_onChange($event.target.checked)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 /** @deprecated since v3.29.0, will be removed with next major release. Please use `p-checkbox` instead. */
 class PCheckboxWrapper extends BaseComponentWithTheme {
@@ -301,10 +362,10 @@ class PCheckboxWrapper extends BaseComponentWithTheme {
     message;
     state;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PCheckboxWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PCheckboxWrapper, isStandalone: false, selector: "p-checkbox-wrapper,[p-checkbox-wrapper]", inputs: { hideLabel: "hideLabel", label: "label", loading: "loading", message: "message", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PCheckboxWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PCheckboxWrapper, isStandalone: false, selector: "p-checkbox-wrapper,[p-checkbox-wrapper]", inputs: { hideLabel: "hideLabel", label: "label", loading: "loading", message: "message", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PCheckboxWrapper, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PCheckboxWrapper, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-checkbox-wrapper,[p-checkbox-wrapper]',
@@ -321,10 +382,10 @@ class PContentWrapper extends BaseComponentWithTheme {
     /** @deprecated */
     theme;
     width;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PContentWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PContentWrapper, isStandalone: false, selector: "p-content-wrapper,[p-content-wrapper]", inputs: { backgroundColor: "backgroundColor", theme: "theme", width: "width" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PContentWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PContentWrapper, isStandalone: false, selector: "p-content-wrapper,[p-content-wrapper]", inputs: { backgroundColor: "backgroundColor", theme: "theme", width: "width" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PContentWrapper, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PContentWrapper, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-content-wrapper,[p-content-wrapper]',
@@ -338,10 +399,10 @@ class PCrest extends BaseComponent {
     aria;
     href;
     target;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PCrest, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PCrest, isStandalone: false, selector: "p-crest,[p-crest]", inputs: { aria: "aria", href: "href", target: "target" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PCrest, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PCrest, isStandalone: false, selector: "p-crest,[p-crest]", inputs: { aria: "aria", href: "href", target: "target" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PCrest, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PCrest, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-crest,[p-crest]',
@@ -358,10 +419,10 @@ class PDisplay extends BaseComponentWithTheme {
     size;
     tag;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PDisplay, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PDisplay, isStandalone: false, selector: "p-display,[p-display]", inputs: { align: "align", color: "color", ellipsis: "ellipsis", size: "size", tag: "tag", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PDisplay, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PDisplay, isStandalone: false, selector: "p-display,[p-display]", inputs: { align: "align", color: "color", ellipsis: "ellipsis", size: "size", tag: "tag", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PDisplay, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PDisplay, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-display,[p-display]',
@@ -377,10 +438,10 @@ class PDivider extends BaseComponentWithTheme {
     /** @deprecated */
     orientation;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PDivider, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PDivider, isStandalone: false, selector: "p-divider,[p-divider]", inputs: { color: "color", direction: "direction", orientation: "orientation", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PDivider, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PDivider, isStandalone: false, selector: "p-divider,[p-divider]", inputs: { color: "color", direction: "direction", orientation: "orientation", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PDivider, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PDivider, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-divider,[p-divider]',
@@ -397,10 +458,10 @@ class PDrilldown extends BaseComponentWithTheme {
     theme;
     dismiss = new EventEmitter();
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PDrilldown, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PDrilldown, isStandalone: false, selector: "p-drilldown,[p-drilldown]", inputs: { activeIdentifier: "activeIdentifier", aria: "aria", open: "open", theme: "theme" }, outputs: { dismiss: "dismiss", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PDrilldown, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PDrilldown, isStandalone: false, selector: "p-drilldown,[p-drilldown]", inputs: { activeIdentifier: "activeIdentifier", aria: "aria", open: "open", theme: "theme" }, outputs: { dismiss: "dismiss", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PDrilldown, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PDrilldown, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-drilldown,[p-drilldown]',
@@ -417,10 +478,10 @@ class PDrilldownItem extends BaseComponent {
     label;
     primary;
     secondary;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PDrilldownItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PDrilldownItem, isStandalone: false, selector: "p-drilldown-item,[p-drilldown-item]", inputs: { cascade: "cascade", identifier: "identifier", label: "label", primary: "primary", secondary: "secondary" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PDrilldownItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PDrilldownItem, isStandalone: false, selector: "p-drilldown-item,[p-drilldown-item]", inputs: { cascade: "cascade", identifier: "identifier", label: "label", primary: "primary", secondary: "secondary" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PDrilldownItem, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PDrilldownItem, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-drilldown-item,[p-drilldown-item]',
@@ -437,10 +498,10 @@ class PDrilldownLink extends BaseComponent {
     href;
     rel;
     target;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PDrilldownLink, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PDrilldownLink, isStandalone: false, selector: "p-drilldown-link,[p-drilldown-link]", inputs: { active: "active", aria: "aria", download: "download", href: "href", rel: "rel", target: "target" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PDrilldownLink, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PDrilldownLink, isStandalone: false, selector: "p-drilldown-link,[p-drilldown-link]", inputs: { active: "active", aria: "aria", download: "download", href: "href", rel: "rel", target: "target" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PDrilldownLink, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PDrilldownLink, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-drilldown-link,[p-drilldown-link]',
@@ -458,10 +519,10 @@ class PFieldset extends BaseComponentWithTheme {
     required;
     state;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFieldset, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PFieldset, isStandalone: false, selector: "p-fieldset,[p-fieldset]", inputs: { aria: "aria", label: "label", labelSize: "labelSize", message: "message", required: "required", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFieldset, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PFieldset, isStandalone: false, selector: "p-fieldset,[p-fieldset]", inputs: { aria: "aria", label: "label", labelSize: "labelSize", message: "message", required: "required", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFieldset, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFieldset, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-fieldset,[p-fieldset]',
@@ -479,10 +540,10 @@ class PFieldsetWrapper extends BaseComponentWithTheme {
     required;
     state;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFieldsetWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PFieldsetWrapper, isStandalone: false, selector: "p-fieldset-wrapper,[p-fieldset-wrapper]", inputs: { label: "label", labelSize: "labelSize", message: "message", required: "required", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFieldsetWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PFieldsetWrapper, isStandalone: false, selector: "p-fieldset-wrapper,[p-fieldset-wrapper]", inputs: { label: "label", labelSize: "labelSize", message: "message", required: "required", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFieldsetWrapper, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFieldsetWrapper, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-fieldset-wrapper,[p-fieldset-wrapper]',
@@ -496,10 +557,10 @@ class PFlag extends BaseComponent {
     aria;
     name;
     size;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFlag, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PFlag, isStandalone: false, selector: "p-flag,[p-flag]", inputs: { aria: "aria", name: "name", size: "size" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFlag, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PFlag, isStandalone: false, selector: "p-flag,[p-flag]", inputs: { aria: "aria", name: "name", size: "size" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFlag, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFlag, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-flag,[p-flag]',
@@ -517,10 +578,10 @@ class PFlex extends BaseComponent {
     inline;
     justifyContent;
     wrap;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFlex, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PFlex, isStandalone: false, selector: "p-flex,[p-flex]", inputs: { alignContent: "alignContent", alignItems: "alignItems", direction: "direction", inline: "inline", justifyContent: "justifyContent", wrap: "wrap" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFlex, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PFlex, isStandalone: false, selector: "p-flex,[p-flex]", inputs: { alignContent: "alignContent", alignItems: "alignItems", direction: "direction", inline: "inline", justifyContent: "justifyContent", wrap: "wrap" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFlex, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFlex, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-flex,[p-flex]',
@@ -538,10 +599,10 @@ class PFlexItem extends BaseComponent {
     offset;
     shrink;
     width;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFlexItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PFlexItem, isStandalone: false, selector: "p-flex-item,[p-flex-item]", inputs: { alignSelf: "alignSelf", flex: "flex", grow: "grow", offset: "offset", shrink: "shrink", width: "width" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFlexItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PFlexItem, isStandalone: false, selector: "p-flex-item,[p-flex-item]", inputs: { alignSelf: "alignSelf", flex: "flex", grow: "grow", offset: "offset", shrink: "shrink", width: "width" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFlexItem, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFlexItem, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-flex-item,[p-flex-item]',
@@ -553,6 +614,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
 
 class PFlyout extends BaseComponentWithTheme {
     aria;
+    backdrop;
     disableBackdropClick;
     footerBehavior;
     open;
@@ -561,15 +623,15 @@ class PFlyout extends BaseComponentWithTheme {
     dismiss = new EventEmitter();
     motionHiddenEnd = new EventEmitter();
     motionVisibleEnd = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFlyout, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PFlyout, isStandalone: false, selector: "p-flyout,[p-flyout]", inputs: { aria: "aria", disableBackdropClick: "disableBackdropClick", footerBehavior: "footerBehavior", open: "open", position: "position", theme: "theme" }, outputs: { dismiss: "dismiss", motionHiddenEnd: "motionHiddenEnd", motionVisibleEnd: "motionVisibleEnd" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFlyout, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PFlyout, isStandalone: false, selector: "p-flyout,[p-flyout]", inputs: { aria: "aria", backdrop: "backdrop", disableBackdropClick: "disableBackdropClick", footerBehavior: "footerBehavior", open: "open", position: "position", theme: "theme" }, outputs: { dismiss: "dismiss", motionHiddenEnd: "motionHiddenEnd", motionVisibleEnd: "motionVisibleEnd" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PFlyout, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PFlyout, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-flyout,[p-flyout]',
                     template: '<ng-content />',
-                    inputs: ['aria', 'disableBackdropClick', 'footerBehavior', 'open', 'position', 'theme'],
+                    inputs: ['aria', 'backdrop', 'disableBackdropClick', 'footerBehavior', 'open', 'position', 'theme'],
                     outputs: ['dismiss', 'motionHiddenEnd', 'motionVisibleEnd'],
                     standalone: false
                 }]
@@ -581,10 +643,10 @@ class PGrid extends BaseComponent {
     /** @deprecated */
     gutter;
     wrap;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PGrid, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PGrid, isStandalone: false, selector: "p-grid,[p-grid]", inputs: { direction: "direction", gutter: "gutter", wrap: "wrap" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PGrid, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PGrid, isStandalone: false, selector: "p-grid,[p-grid]", inputs: { direction: "direction", gutter: "gutter", wrap: "wrap" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PGrid, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PGrid, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-grid,[p-grid]',
@@ -598,10 +660,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
 class PGridItem extends BaseComponent {
     offset;
     size;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PGridItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PGridItem, isStandalone: false, selector: "p-grid-item,[p-grid-item]", inputs: { offset: "offset", size: "size" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PGridItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PGridItem, isStandalone: false, selector: "p-grid-item,[p-grid-item]", inputs: { offset: "offset", size: "size" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PGridItem, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PGridItem, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-grid-item,[p-grid-item]',
@@ -618,10 +680,10 @@ class PHeading extends BaseComponentWithTheme {
     size;
     tag;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PHeading, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PHeading, isStandalone: false, selector: "p-heading,[p-heading]", inputs: { align: "align", color: "color", ellipsis: "ellipsis", size: "size", tag: "tag", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PHeading, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PHeading, isStandalone: false, selector: "p-heading,[p-heading]", inputs: { align: "align", color: "color", ellipsis: "ellipsis", size: "size", tag: "tag", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PHeading, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PHeading, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-heading,[p-heading]',
@@ -639,10 +701,10 @@ class PHeadline extends BaseComponentWithTheme {
     tag;
     theme;
     variant;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PHeadline, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PHeadline, isStandalone: false, selector: "p-headline,[p-headline]", inputs: { align: "align", color: "color", ellipsis: "ellipsis", tag: "tag", theme: "theme", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PHeadline, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PHeadline, isStandalone: false, selector: "p-headline,[p-headline]", inputs: { align: "align", color: "color", ellipsis: "ellipsis", tag: "tag", theme: "theme", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PHeadline, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PHeadline, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-headline,[p-headline]',
@@ -661,10 +723,10 @@ class PIcon extends BaseComponentWithTheme {
     size;
     source;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PIcon, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PIcon, isStandalone: false, selector: "p-icon,[p-icon]", inputs: { aria: "aria", color: "color", lazy: "lazy", name: "name", size: "size", source: "source", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PIcon, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PIcon, isStandalone: false, selector: "p-icon,[p-icon]", inputs: { aria: "aria", color: "color", lazy: "lazy", name: "name", size: "size", source: "source", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PIcon, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PIcon, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-icon,[p-icon]',
@@ -688,10 +750,10 @@ class PInlineNotification extends BaseComponentWithTheme {
     theme;
     action = new EventEmitter();
     dismiss = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInlineNotification, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PInlineNotification, isStandalone: false, selector: "p-inline-notification,[p-inline-notification]", inputs: { actionIcon: "actionIcon", actionLabel: "actionLabel", actionLoading: "actionLoading", description: "description", dismissButton: "dismissButton", heading: "heading", headingTag: "headingTag", persistent: "persistent", state: "state", theme: "theme" }, outputs: { action: "action", dismiss: "dismiss" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInlineNotification, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInlineNotification, isStandalone: false, selector: "p-inline-notification,[p-inline-notification]", inputs: { actionIcon: "actionIcon", actionLabel: "actionLabel", actionLoading: "actionLoading", description: "description", dismissButton: "dismissButton", heading: "heading", headingTag: "headingTag", persistent: "persistent", state: "state", theme: "theme" }, outputs: { action: "action", dismiss: "dismiss" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInlineNotification, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInlineNotification, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-inline-notification,[p-inline-notification]',
@@ -703,6 +765,9 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PInputDate extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     autoComplete;
     compact;
     description;
@@ -724,21 +789,61 @@ class PInputDate extends BaseComponentWithTheme {
     blur = new EventEmitter();
     change = new EventEmitter();
     input = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputDate, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PInputDate, isStandalone: false, selector: "p-input-date,[p-input-date]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", max: "max", message: "message", min: "min", name: "name", readOnly: "readOnly", required: "required", state: "state", step: "step", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputDate, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputDate, isStandalone: false, selector: "p-input-date,[p-input-date]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", max: "max", message: "message", min: "min", name: "name", readOnly: "readOnly", required: "required", state: "state", step: "step", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputDate),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputDate, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputDate, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-input-date,[p-input-date]',
                     template: '<ng-content />',
                     inputs: ['autoComplete', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'label', 'loading', 'max', 'message', 'min', 'name', 'readOnly', 'required', 'state', 'step', 'theme', 'value'],
                     outputs: ['blur', 'change', 'input'],
-                    standalone: false
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputDate),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PInputEmail extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     autoComplete;
     compact;
     description;
@@ -763,21 +868,137 @@ class PInputEmail extends BaseComponentWithTheme {
     blur = new EventEmitter();
     change = new EventEmitter();
     input = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputEmail, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PInputEmail, isStandalone: false, selector: "p-input-email,[p-input-email]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", indicator: "indicator", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", multiple: "multiple", name: "name", pattern: "pattern", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputEmail, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputEmail, isStandalone: false, selector: "p-input-email,[p-input-email]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", indicator: "indicator", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", multiple: "multiple", name: "name", pattern: "pattern", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputEmail),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputEmail, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputEmail, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-input-email,[p-input-email]',
                     template: '<ng-content />',
                     inputs: ['autoComplete', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'indicator', 'label', 'loading', 'maxLength', 'message', 'minLength', 'multiple', 'name', 'pattern', 'placeholder', 'readOnly', 'required', 'state', 'theme', 'value'],
                     outputs: ['blur', 'change', 'input'],
-                    standalone: false
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputEmail),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
+
+class PInputMonth extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
+    autoComplete;
+    compact;
+    description;
+    disabled;
+    form;
+    hideLabel;
+    label;
+    loading;
+    max;
+    message;
+    min;
+    name;
+    readOnly;
+    required;
+    state;
+    step;
+    theme;
+    value;
+    blur = new EventEmitter();
+    change = new EventEmitter();
+    input = new EventEmitter();
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputMonth, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputMonth, isStandalone: false, selector: "p-input-month,[p-input-month]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", max: "max", message: "message", min: "min", name: "name", readOnly: "readOnly", required: "required", state: "state", step: "step", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputMonth),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputMonth, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'p-input-month,[p-input-month]',
+                    template: '<ng-content />',
+                    inputs: ['autoComplete', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'label', 'loading', 'max', 'message', 'min', 'name', 'readOnly', 'required', 'state', 'step', 'theme', 'value'],
+                    outputs: ['blur', 'change', 'input'],
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputMonth),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
+                }]
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PInputNumber extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     autoComplete;
     compact;
     controls;
@@ -801,21 +1022,61 @@ class PInputNumber extends BaseComponentWithTheme {
     blur = new EventEmitter();
     change = new EventEmitter();
     input = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputNumber, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PInputNumber, isStandalone: false, selector: "p-input-number,[p-input-number]", inputs: { autoComplete: "autoComplete", compact: "compact", controls: "controls", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", max: "max", message: "message", min: "min", name: "name", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", step: "step", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputNumber, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputNumber, isStandalone: false, selector: "p-input-number,[p-input-number]", inputs: { autoComplete: "autoComplete", compact: "compact", controls: "controls", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", max: "max", message: "message", min: "min", name: "name", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", step: "step", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputNumber),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputNumber, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputNumber, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-input-number,[p-input-number]',
                     template: '<ng-content />',
                     inputs: ['autoComplete', 'compact', 'controls', 'description', 'disabled', 'form', 'hideLabel', 'label', 'loading', 'max', 'message', 'min', 'name', 'placeholder', 'readOnly', 'required', 'state', 'step', 'theme', 'value'],
                     outputs: ['blur', 'change', 'input'],
-                    standalone: false
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputNumber),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PInputPassword extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     autoComplete;
     compact;
     description;
@@ -838,21 +1099,61 @@ class PInputPassword extends BaseComponentWithTheme {
     blur = new EventEmitter();
     change = new EventEmitter();
     input = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputPassword, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PInputPassword, isStandalone: false, selector: "p-input-password,[p-input-password]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", theme: "theme", toggle: "toggle", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputPassword, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputPassword, isStandalone: false, selector: "p-input-password,[p-input-password]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", theme: "theme", toggle: "toggle", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputPassword),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputPassword, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputPassword, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-input-password,[p-input-password]',
                     template: '<ng-content />',
                     inputs: ['autoComplete', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'label', 'loading', 'maxLength', 'message', 'minLength', 'name', 'placeholder', 'readOnly', 'required', 'state', 'theme', 'toggle', 'value'],
                     outputs: ['blur', 'change', 'input'],
-                    standalone: false
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputPassword),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PInputSearch extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     autoComplete;
     clear;
     compact;
@@ -863,7 +1164,9 @@ class PInputSearch extends BaseComponentWithTheme {
     indicator;
     label;
     loading;
+    maxLength;
     message;
+    minLength;
     name;
     placeholder;
     readOnly;
@@ -874,21 +1177,61 @@ class PInputSearch extends BaseComponentWithTheme {
     blur = new EventEmitter();
     change = new EventEmitter();
     input = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputSearch, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PInputSearch, isStandalone: false, selector: "p-input-search,[p-input-search]", inputs: { autoComplete: "autoComplete", clear: "clear", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", indicator: "indicator", label: "label", loading: "loading", message: "message", name: "name", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputSearch, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputSearch, isStandalone: false, selector: "p-input-search,[p-input-search]", inputs: { autoComplete: "autoComplete", clear: "clear", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", indicator: "indicator", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputSearch),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputSearch, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputSearch, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-input-search,[p-input-search]',
                     template: '<ng-content />',
-                    inputs: ['autoComplete', 'clear', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'indicator', 'label', 'loading', 'message', 'name', 'placeholder', 'readOnly', 'required', 'state', 'theme', 'value'],
+                    inputs: ['autoComplete', 'clear', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'indicator', 'label', 'loading', 'maxLength', 'message', 'minLength', 'name', 'placeholder', 'readOnly', 'required', 'state', 'theme', 'value'],
                     outputs: ['blur', 'change', 'input'],
-                    standalone: false
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputSearch),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PInputTel extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     autoComplete;
     compact;
     description;
@@ -912,21 +1255,61 @@ class PInputTel extends BaseComponentWithTheme {
     blur = new EventEmitter();
     change = new EventEmitter();
     input = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputTel, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PInputTel, isStandalone: false, selector: "p-input-tel,[p-input-tel]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", indicator: "indicator", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", pattern: "pattern", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputTel, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputTel, isStandalone: false, selector: "p-input-tel,[p-input-tel]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", indicator: "indicator", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", pattern: "pattern", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputTel),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputTel, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputTel, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-input-tel,[p-input-tel]',
                     template: '<ng-content />',
                     inputs: ['autoComplete', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'indicator', 'label', 'loading', 'maxLength', 'message', 'minLength', 'name', 'pattern', 'placeholder', 'readOnly', 'required', 'state', 'theme', 'value'],
                     outputs: ['blur', 'change', 'input'],
-                    standalone: false
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputTel),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PInputText extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     autoComplete;
     compact;
     counter;
@@ -950,21 +1333,61 @@ class PInputText extends BaseComponentWithTheme {
     blur = new EventEmitter();
     change = new EventEmitter();
     input = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputText, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PInputText, isStandalone: false, selector: "p-input-text,[p-input-text]", inputs: { autoComplete: "autoComplete", compact: "compact", counter: "counter", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", placeholder: "placeholder", readOnly: "readOnly", required: "required", spellCheck: "spellCheck", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputText, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputText, isStandalone: false, selector: "p-input-text,[p-input-text]", inputs: { autoComplete: "autoComplete", compact: "compact", counter: "counter", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", placeholder: "placeholder", readOnly: "readOnly", required: "required", spellCheck: "spellCheck", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputText),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputText, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputText, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-input-text,[p-input-text]',
                     template: '<ng-content />',
                     inputs: ['autoComplete', 'compact', 'counter', 'description', 'disabled', 'form', 'hideLabel', 'label', 'loading', 'maxLength', 'message', 'minLength', 'name', 'placeholder', 'readOnly', 'required', 'spellCheck', 'state', 'theme', 'value'],
                     outputs: ['blur', 'change', 'input'],
-                    standalone: false
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputText),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PInputTime extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     autoComplete;
     compact;
     description;
@@ -986,21 +1409,61 @@ class PInputTime extends BaseComponentWithTheme {
     blur = new EventEmitter();
     change = new EventEmitter();
     input = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputTime, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PInputTime, isStandalone: false, selector: "p-input-time,[p-input-time]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", max: "max", message: "message", min: "min", name: "name", readOnly: "readOnly", required: "required", state: "state", step: "step", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputTime, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputTime, isStandalone: false, selector: "p-input-time,[p-input-time]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", max: "max", message: "message", min: "min", name: "name", readOnly: "readOnly", required: "required", state: "state", step: "step", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputTime),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputTime, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputTime, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-input-time,[p-input-time]',
                     template: '<ng-content />',
                     inputs: ['autoComplete', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'label', 'loading', 'max', 'message', 'min', 'name', 'readOnly', 'required', 'state', 'step', 'theme', 'value'],
                     outputs: ['blur', 'change', 'input'],
-                    standalone: false
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputTime),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PInputUrl extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     autoComplete;
     compact;
     description;
@@ -1024,19 +1487,132 @@ class PInputUrl extends BaseComponentWithTheme {
     blur = new EventEmitter();
     change = new EventEmitter();
     input = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputUrl, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PInputUrl, isStandalone: false, selector: "p-input-url,[p-input-url]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", indicator: "indicator", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", pattern: "pattern", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputUrl, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputUrl, isStandalone: false, selector: "p-input-url,[p-input-url]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", indicator: "indicator", label: "label", loading: "loading", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", pattern: "pattern", placeholder: "placeholder", readOnly: "readOnly", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputUrl),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PInputUrl, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputUrl, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-input-url,[p-input-url]',
                     template: '<ng-content />',
                     inputs: ['autoComplete', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'indicator', 'label', 'loading', 'maxLength', 'message', 'minLength', 'name', 'pattern', 'placeholder', 'readOnly', 'required', 'state', 'theme', 'value'],
                     outputs: ['blur', 'change', 'input'],
-                    standalone: false
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputUrl),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
+
+class PInputWeek extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
+    autoComplete;
+    compact;
+    description;
+    disabled;
+    form;
+    hideLabel;
+    label;
+    loading;
+    max;
+    message;
+    min;
+    name;
+    readOnly;
+    required;
+    state;
+    step;
+    theme;
+    value;
+    blur = new EventEmitter();
+    change = new EventEmitter();
+    input = new EventEmitter();
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputWeek, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PInputWeek, isStandalone: false, selector: "p-input-week,[p-input-week]", inputs: { autoComplete: "autoComplete", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", max: "max", message: "message", min: "min", name: "name", readOnly: "readOnly", required: "required", state: "state", step: "step", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PInputWeek),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PInputWeek, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'p-input-week,[p-input-week]',
+                    template: '<ng-content />',
+                    inputs: ['autoComplete', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'label', 'loading', 'max', 'message', 'min', 'name', 'readOnly', 'required', 'state', 'step', 'theme', 'value'],
+                    outputs: ['blur', 'change', 'input'],
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PInputWeek),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
+                }]
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PLink extends BaseComponentWithTheme {
     aria;
@@ -1050,10 +1626,10 @@ class PLink extends BaseComponentWithTheme {
     target;
     theme;
     variant;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLink, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PLink, isStandalone: false, selector: "p-link,[p-link]", inputs: { aria: "aria", compact: "compact", download: "download", hideLabel: "hideLabel", href: "href", icon: "icon", iconSource: "iconSource", rel: "rel", target: "target", theme: "theme", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLink, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PLink, isStandalone: false, selector: "p-link,[p-link]", inputs: { aria: "aria", compact: "compact", download: "download", hideLabel: "hideLabel", href: "href", icon: "icon", iconSource: "iconSource", rel: "rel", target: "target", theme: "theme", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLink, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLink, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-link,[p-link]',
@@ -1080,10 +1656,10 @@ class PLinkPure extends BaseComponentWithTheme {
     underline;
     /** @deprecated */
     weight;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLinkPure, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PLinkPure, isStandalone: false, selector: "p-link-pure,[p-link-pure]", inputs: { active: "active", alignLabel: "alignLabel", aria: "aria", download: "download", hideLabel: "hideLabel", href: "href", icon: "icon", iconSource: "iconSource", rel: "rel", size: "size", stretch: "stretch", target: "target", theme: "theme", underline: "underline", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLinkPure, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PLinkPure, isStandalone: false, selector: "p-link-pure,[p-link-pure]", inputs: { active: "active", alignLabel: "alignLabel", aria: "aria", download: "download", hideLabel: "hideLabel", href: "href", icon: "icon", iconSource: "iconSource", rel: "rel", size: "size", stretch: "stretch", target: "target", theme: "theme", underline: "underline", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLinkPure, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLinkPure, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-link-pure,[p-link-pure]',
@@ -1103,10 +1679,10 @@ class PLinkSocial extends BaseComponentWithTheme {
     rel;
     target;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLinkSocial, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PLinkSocial, isStandalone: false, selector: "p-link-social,[p-link-social]", inputs: { compact: "compact", hideLabel: "hideLabel", href: "href", icon: "icon", iconSource: "iconSource", rel: "rel", target: "target", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLinkSocial, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PLinkSocial, isStandalone: false, selector: "p-link-social,[p-link-social]", inputs: { compact: "compact", hideLabel: "hideLabel", href: "href", icon: "icon", iconSource: "iconSource", rel: "rel", target: "target", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLinkSocial, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLinkSocial, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-link-social,[p-link-social]',
@@ -1131,10 +1707,10 @@ class PLinkTile extends BaseComponent {
     size;
     target;
     weight;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLinkTile, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PLinkTile, isStandalone: false, selector: "p-link-tile,[p-link-tile]", inputs: { align: "align", aria: "aria", aspectRatio: "aspectRatio", background: "background", compact: "compact", description: "description", download: "download", gradient: "gradient", href: "href", label: "label", rel: "rel", size: "size", target: "target", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLinkTile, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PLinkTile, isStandalone: false, selector: "p-link-tile,[p-link-tile]", inputs: { align: "align", aria: "aria", aspectRatio: "aspectRatio", background: "background", compact: "compact", description: "description", download: "download", gradient: "gradient", href: "href", label: "label", rel: "rel", size: "size", target: "target", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLinkTile, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLinkTile, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-link-tile,[p-link-tile]',
@@ -1152,10 +1728,10 @@ class PLinkTileModelSignature extends BaseComponent {
     linkDirection;
     model;
     weight;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLinkTileModelSignature, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PLinkTileModelSignature, isStandalone: false, selector: "p-link-tile-model-signature,[p-link-tile-model-signature]", inputs: { aspectRatio: "aspectRatio", description: "description", heading: "heading", headingTag: "headingTag", linkDirection: "linkDirection", model: "model", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLinkTileModelSignature, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PLinkTileModelSignature, isStandalone: false, selector: "p-link-tile-model-signature,[p-link-tile-model-signature]", inputs: { aspectRatio: "aspectRatio", description: "description", heading: "heading", headingTag: "headingTag", linkDirection: "linkDirection", model: "model", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLinkTileModelSignature, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLinkTileModelSignature, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-link-tile-model-signature,[p-link-tile-model-signature]',
@@ -1178,10 +1754,10 @@ class PLinkTileProduct extends BaseComponentWithTheme {
     target;
     theme;
     like = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLinkTileProduct, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PLinkTileProduct, isStandalone: false, selector: "p-link-tile-product,[p-link-tile-product]", inputs: { aspectRatio: "aspectRatio", description: "description", heading: "heading", href: "href", likeButton: "likeButton", liked: "liked", price: "price", priceOriginal: "priceOriginal", rel: "rel", target: "target", theme: "theme" }, outputs: { like: "like" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLinkTileProduct, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PLinkTileProduct, isStandalone: false, selector: "p-link-tile-product,[p-link-tile-product]", inputs: { aspectRatio: "aspectRatio", description: "description", heading: "heading", href: "href", likeButton: "likeButton", liked: "liked", price: "price", priceOriginal: "priceOriginal", rel: "rel", target: "target", theme: "theme" }, outputs: { like: "like" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PLinkTileProduct, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PLinkTileProduct, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-link-tile-product,[p-link-tile-product]',
@@ -1200,10 +1776,10 @@ class PMarque extends BaseComponent {
     target;
     trademark;
     variant;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PMarque, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PMarque, isStandalone: false, selector: "p-marque,[p-marque]", inputs: { aria: "aria", href: "href", size: "size", target: "target", trademark: "trademark", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PMarque, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PMarque, isStandalone: false, selector: "p-marque,[p-marque]", inputs: { aria: "aria", href: "href", size: "size", target: "target", trademark: "trademark", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PMarque, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PMarque, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-marque,[p-marque]',
@@ -1230,10 +1806,10 @@ class PModal extends BaseComponentWithTheme {
     dismiss = new EventEmitter();
     motionHiddenEnd = new EventEmitter();
     motionVisibleEnd = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PModal, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PModal, isStandalone: false, selector: "p-modal,[p-modal]", inputs: { aria: "aria", backdrop: "backdrop", disableBackdropClick: "disableBackdropClick", disableCloseButton: "disableCloseButton", dismissButton: "dismissButton", fullscreen: "fullscreen", heading: "heading", open: "open", theme: "theme" }, outputs: { close: "close", dismiss: "dismiss", motionHiddenEnd: "motionHiddenEnd", motionVisibleEnd: "motionVisibleEnd" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PModal, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PModal, isStandalone: false, selector: "p-modal,[p-modal]", inputs: { aria: "aria", backdrop: "backdrop", disableBackdropClick: "disableBackdropClick", disableCloseButton: "disableCloseButton", dismissButton: "dismissButton", fullscreen: "fullscreen", heading: "heading", open: "open", theme: "theme" }, outputs: { close: "close", dismiss: "dismiss", motionHiddenEnd: "motionHiddenEnd", motionVisibleEnd: "motionVisibleEnd" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PModal, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PModal, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-modal,[p-modal]',
@@ -1252,10 +1828,10 @@ class PModelSignature extends BaseComponentWithTheme {
     safeZone;
     size;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PModelSignature, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PModelSignature, isStandalone: false, selector: "p-model-signature,[p-model-signature]", inputs: { color: "color", fetchPriority: "fetchPriority", lazy: "lazy", model: "model", safeZone: "safeZone", size: "size", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PModelSignature, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PModelSignature, isStandalone: false, selector: "p-model-signature,[p-model-signature]", inputs: { color: "color", fetchPriority: "fetchPriority", lazy: "lazy", model: "model", safeZone: "safeZone", size: "size", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PModelSignature, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PModelSignature, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-model-signature,[p-model-signature]',
@@ -1266,6 +1842,9 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PMultiSelect extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     compact;
     description;
     disabled;
@@ -1279,28 +1858,69 @@ class PMultiSelect extends BaseComponentWithTheme {
     state;
     theme;
     value;
+    blur = new EventEmitter();
+    change = new EventEmitter();
+    toggle = new EventEmitter();
+    /** @deprecated */
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PMultiSelect, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PMultiSelect, isStandalone: false, selector: "p-multi-select,[p-multi-select]", inputs: { compact: "compact", description: "description", disabled: "disabled", dropdownDirection: "dropdownDirection", form: "form", hideLabel: "hideLabel", label: "label", message: "message", name: "name", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PMultiSelect, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PMultiSelect, isStandalone: false, selector: "p-multi-select,[p-multi-select]", inputs: { compact: "compact", description: "description", disabled: "disabled", dropdownDirection: "dropdownDirection", form: "form", hideLabel: "hideLabel", label: "label", message: "message", name: "name", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", toggle: "toggle", update: "update" }, host: { listeners: { "change": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PMultiSelect),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PMultiSelect, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PMultiSelect, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-multi-select,[p-multi-select]',
                     template: '<ng-content />',
                     inputs: ['compact', 'description', 'disabled', 'dropdownDirection', 'form', 'hideLabel', 'label', 'message', 'name', 'required', 'state', 'theme', 'value'],
-                    outputs: ['update'],
-                    standalone: false
+                    outputs: ['blur', 'change', 'toggle', 'update'],
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PMultiSelect),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(change)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PMultiSelectOption extends BaseComponent {
     disabled;
     value;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PMultiSelectOption, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PMultiSelectOption, isStandalone: false, selector: "p-multi-select-option,[p-multi-select-option]", inputs: { disabled: "disabled", value: "value" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PMultiSelectOption, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PMultiSelectOption, isStandalone: false, selector: "p-multi-select-option,[p-multi-select-option]", inputs: { disabled: "disabled", value: "value" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PMultiSelectOption, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PMultiSelectOption, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-multi-select-option,[p-multi-select-option]',
@@ -1313,10 +1933,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
 class POptgroup extends BaseComponent {
     disabled;
     label;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: POptgroup, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: POptgroup, isStandalone: false, selector: "p-optgroup,[p-optgroup]", inputs: { disabled: "disabled", label: "label" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: POptgroup, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: POptgroup, isStandalone: false, selector: "p-optgroup,[p-optgroup]", inputs: { disabled: "disabled", label: "label" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: POptgroup, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: POptgroup, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-optgroup,[p-optgroup]',
@@ -1346,10 +1966,10 @@ class PPagination extends BaseComponentWithTheme {
     /** @deprecated */
     pageChange = new EventEmitter();
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PPagination, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PPagination, isStandalone: false, selector: "p-pagination,[p-pagination]", inputs: { activePage: "activePage", allyLabel: "allyLabel", allyLabelNext: "allyLabelNext", allyLabelPage: "allyLabelPage", allyLabelPrev: "allyLabelPrev", intl: "intl", itemsPerPage: "itemsPerPage", maxNumberOfPageLinks: "maxNumberOfPageLinks", showLastPage: "showLastPage", theme: "theme", totalItemsCount: "totalItemsCount" }, outputs: { pageChange: "pageChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PPagination, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PPagination, isStandalone: false, selector: "p-pagination,[p-pagination]", inputs: { activePage: "activePage", allyLabel: "allyLabel", allyLabelNext: "allyLabelNext", allyLabelPage: "allyLabelPage", allyLabelPrev: "allyLabelPrev", intl: "intl", itemsPerPage: "itemsPerPage", maxNumberOfPageLinks: "maxNumberOfPageLinks", showLastPage: "showLastPage", theme: "theme", totalItemsCount: "totalItemsCount" }, outputs: { pageChange: "pageChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PPagination, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PPagination, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-pagination,[p-pagination]',
@@ -1361,6 +1981,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PPinCode extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
+    compact;
     description;
     disabled;
     form;
@@ -1375,30 +1999,70 @@ class PPinCode extends BaseComponentWithTheme {
     theme;
     type;
     value;
+    blur = new EventEmitter();
+    change = new EventEmitter();
+    /** @deprecated */
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PPinCode, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PPinCode, isStandalone: false, selector: "p-pin-code,[p-pin-code]", inputs: { description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", length: "length", loading: "loading", message: "message", name: "name", required: "required", state: "state", theme: "theme", type: "type", value: "value" }, outputs: { update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PPinCode, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PPinCode, isStandalone: false, selector: "p-pin-code,[p-pin-code]", inputs: { compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", length: "length", loading: "loading", message: "message", name: "name", required: "required", state: "state", theme: "theme", type: "type", value: "value" }, outputs: { blur: "blur", change: "change", update: "update" }, host: { listeners: { "change": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PPinCode),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PPinCode, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PPinCode, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-pin-code,[p-pin-code]',
                     template: '<ng-content />',
-                    inputs: ['description', 'disabled', 'form', 'hideLabel', 'label', 'length', 'loading', 'message', 'name', 'required', 'state', 'theme', 'type', 'value'],
-                    outputs: ['update'],
-                    standalone: false
+                    inputs: ['compact', 'description', 'disabled', 'form', 'hideLabel', 'label', 'length', 'loading', 'message', 'name', 'required', 'state', 'theme', 'type', 'value'],
+                    outputs: ['blur', 'change', 'update'],
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PPinCode),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(change)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PPopover extends BaseComponentWithTheme {
     aria;
     description;
     direction;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PPopover, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PPopover, isStandalone: false, selector: "p-popover,[p-popover]", inputs: { aria: "aria", description: "description", direction: "direction", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PPopover, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PPopover, isStandalone: false, selector: "p-popover,[p-popover]", inputs: { aria: "aria", description: "description", direction: "direction", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PPopover, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PPopover, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-popover,[p-popover]',
@@ -1408,6 +2072,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
                 }]
         }] });
 
+/** @deprecated since v3.30.0, will be removed with next major release. Please use `p-radio-group` instead. */
 class PRadioButtonWrapper extends BaseComponentWithTheme {
     hideLabel;
     label;
@@ -1415,15 +2080,104 @@ class PRadioButtonWrapper extends BaseComponentWithTheme {
     message;
     state;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PRadioButtonWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PRadioButtonWrapper, isStandalone: false, selector: "p-radio-button-wrapper,[p-radio-button-wrapper]", inputs: { hideLabel: "hideLabel", label: "label", loading: "loading", message: "message", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PRadioButtonWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PRadioButtonWrapper, isStandalone: false, selector: "p-radio-button-wrapper,[p-radio-button-wrapper]", inputs: { hideLabel: "hideLabel", label: "label", loading: "loading", message: "message", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PRadioButtonWrapper, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PRadioButtonWrapper, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-radio-button-wrapper,[p-radio-button-wrapper]',
                     template: '<ng-content />',
                     inputs: ['hideLabel', 'label', 'loading', 'message', 'state', 'theme'],
+                    standalone: false
+                }]
+        }] });
+
+class PRadioGroup extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
+    compact;
+    description;
+    direction;
+    disabled;
+    form;
+    hideLabel;
+    label;
+    loading;
+    message;
+    name;
+    required;
+    state;
+    theme;
+    value;
+    blur = new EventEmitter();
+    change = new EventEmitter();
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PRadioGroup, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PRadioGroup, isStandalone: false, selector: "p-radio-group,[p-radio-group]", inputs: { compact: "compact", description: "description", direction: "direction", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", loading: "loading", message: "message", name: "name", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change" }, host: { listeners: { "change": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PRadioGroup),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PRadioGroup, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'p-radio-group,[p-radio-group]',
+                    template: '<ng-content />',
+                    inputs: ['compact', 'description', 'direction', 'disabled', 'form', 'hideLabel', 'label', 'loading', 'message', 'name', 'required', 'state', 'theme', 'value'],
+                    outputs: ['blur', 'change'],
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PRadioGroup),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(change)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
+                }]
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
+
+class PRadioGroupOption extends BaseComponent {
+    disabled;
+    label;
+    loading;
+    value;
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PRadioGroupOption, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PRadioGroupOption, isStandalone: false, selector: "p-radio-group-option,[p-radio-group-option]", inputs: { disabled: "disabled", label: "label", loading: "loading", value: "value" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PRadioGroupOption, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'p-radio-group-option,[p-radio-group-option]',
+                    template: '<ng-content />',
+                    inputs: ['disabled', 'label', 'loading', 'value'],
                     standalone: false
                 }]
         }] });
@@ -1440,10 +2194,10 @@ class PScroller extends BaseComponentWithTheme {
     scrollToPosition;
     scrollbar;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PScroller, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PScroller, isStandalone: false, selector: "p-scroller,[p-scroller]", inputs: { alignScrollIndicator: "alignScrollIndicator", aria: "aria", gradientColor: "gradientColor", gradientColorScheme: "gradientColorScheme", scrollIndicatorPosition: "scrollIndicatorPosition", scrollToPosition: "scrollToPosition", scrollbar: "scrollbar", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PScroller, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PScroller, isStandalone: false, selector: "p-scroller,[p-scroller]", inputs: { alignScrollIndicator: "alignScrollIndicator", aria: "aria", gradientColor: "gradientColor", gradientColorScheme: "gradientColorScheme", scrollIndicatorPosition: "scrollIndicatorPosition", scrollToPosition: "scrollToPosition", scrollbar: "scrollbar", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PScroller, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PScroller, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-scroller,[p-scroller]',
@@ -1454,30 +2208,81 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PSegmentedControl extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     /** @deprecated */
     backgroundColor;
     columns;
+    compact;
+    description;
     disabled;
     form;
+    hideLabel;
+    label;
+    message;
     name;
+    noWrap;
+    required;
+    state;
     theme;
     value;
+    blur = new EventEmitter();
+    change = new EventEmitter();
     /** @deprecated */
     segmentedControlChange = new EventEmitter();
+    /** @deprecated */
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSegmentedControl, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PSegmentedControl, isStandalone: false, selector: "p-segmented-control,[p-segmented-control]", inputs: { backgroundColor: "backgroundColor", columns: "columns", disabled: "disabled", form: "form", name: "name", theme: "theme", value: "value" }, outputs: { segmentedControlChange: "segmentedControlChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSegmentedControl, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PSegmentedControl, isStandalone: false, selector: "p-segmented-control,[p-segmented-control]", inputs: { backgroundColor: "backgroundColor", columns: "columns", compact: "compact", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", message: "message", name: "name", noWrap: "noWrap", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", segmentedControlChange: "segmentedControlChange", update: "update" }, host: { listeners: { "change": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PSegmentedControl),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSegmentedControl, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSegmentedControl, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-segmented-control,[p-segmented-control]',
                     template: '<ng-content />',
-                    inputs: ['backgroundColor', 'columns', 'disabled', 'form', 'name', 'theme', 'value'],
-                    outputs: ['segmentedControlChange', 'update'],
-                    standalone: false
+                    inputs: ['backgroundColor', 'columns', 'compact', 'description', 'disabled', 'form', 'hideLabel', 'label', 'message', 'name', 'noWrap', 'required', 'state', 'theme', 'value'],
+                    outputs: ['blur', 'change', 'segmentedControlChange', 'update'],
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PSegmentedControl),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(change)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PSegmentedControlItem extends BaseComponent {
     aria;
@@ -1486,10 +2291,10 @@ class PSegmentedControlItem extends BaseComponent {
     iconSource;
     label;
     value;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSegmentedControlItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PSegmentedControlItem, isStandalone: false, selector: "p-segmented-control-item,[p-segmented-control-item]", inputs: { aria: "aria", disabled: "disabled", icon: "icon", iconSource: "iconSource", label: "label", value: "value" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSegmentedControlItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PSegmentedControlItem, isStandalone: false, selector: "p-segmented-control-item,[p-segmented-control-item]", inputs: { aria: "aria", disabled: "disabled", icon: "icon", iconSource: "iconSource", label: "label", value: "value" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSegmentedControlItem, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSegmentedControlItem, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-segmented-control-item,[p-segmented-control-item]',
@@ -1500,6 +2305,9 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PSelect extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     compact;
     description;
     disabled;
@@ -1514,28 +2322,69 @@ class PSelect extends BaseComponentWithTheme {
     state;
     theme;
     value;
+    blur = new EventEmitter();
+    change = new EventEmitter();
+    toggle = new EventEmitter();
+    /** @deprecated */
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSelect, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PSelect, isStandalone: false, selector: "p-select,[p-select]", inputs: { compact: "compact", description: "description", disabled: "disabled", dropdownDirection: "dropdownDirection", filter: "filter", form: "form", hideLabel: "hideLabel", label: "label", message: "message", name: "name", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSelect, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PSelect, isStandalone: false, selector: "p-select,[p-select]", inputs: { compact: "compact", description: "description", disabled: "disabled", dropdownDirection: "dropdownDirection", filter: "filter", form: "form", hideLabel: "hideLabel", label: "label", message: "message", name: "name", required: "required", state: "state", theme: "theme", value: "value" }, outputs: { blur: "blur", change: "change", toggle: "toggle", update: "update" }, host: { listeners: { "change": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PSelect),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSelect, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSelect, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-select,[p-select]',
                     template: '<ng-content />',
                     inputs: ['compact', 'description', 'disabled', 'dropdownDirection', 'filter', 'form', 'hideLabel', 'label', 'message', 'name', 'required', 'state', 'theme', 'value'],
-                    outputs: ['update'],
-                    standalone: false
+                    outputs: ['blur', 'change', 'toggle', 'update'],
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PSelect),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(change)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 class PSelectOption extends BaseComponent {
     disabled;
     value;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSelectOption, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PSelectOption, isStandalone: false, selector: "p-select-option,[p-select-option]", inputs: { disabled: "disabled", value: "value" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSelectOption, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PSelectOption, isStandalone: false, selector: "p-select-option,[p-select-option]", inputs: { disabled: "disabled", value: "value" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSelectOption, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSelectOption, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-select-option,[p-select-option]',
@@ -1556,10 +2405,10 @@ class PSelectWrapper extends BaseComponentWithTheme {
     native;
     state;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSelectWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PSelectWrapper, isStandalone: false, selector: "p-select-wrapper,[p-select-wrapper]", inputs: { description: "description", dropdownDirection: "dropdownDirection", filter: "filter", hideLabel: "hideLabel", label: "label", message: "message", native: "native", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSelectWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PSelectWrapper, isStandalone: false, selector: "p-select-wrapper,[p-select-wrapper]", inputs: { description: "description", dropdownDirection: "dropdownDirection", filter: "filter", hideLabel: "hideLabel", label: "label", message: "message", native: "native", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSelectWrapper, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSelectWrapper, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-select-wrapper,[p-select-wrapper]',
@@ -1578,10 +2427,10 @@ class PSheet extends BaseComponentWithTheme {
     dismiss = new EventEmitter();
     motionHiddenEnd = new EventEmitter();
     motionVisibleEnd = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSheet, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PSheet, isStandalone: false, selector: "p-sheet,[p-sheet]", inputs: { aria: "aria", disableBackdropClick: "disableBackdropClick", dismissButton: "dismissButton", open: "open", theme: "theme" }, outputs: { dismiss: "dismiss", motionHiddenEnd: "motionHiddenEnd", motionVisibleEnd: "motionVisibleEnd" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSheet, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PSheet, isStandalone: false, selector: "p-sheet,[p-sheet]", inputs: { aria: "aria", disableBackdropClick: "disableBackdropClick", dismissButton: "dismissButton", open: "open", theme: "theme" }, outputs: { dismiss: "dismiss", motionHiddenEnd: "motionHiddenEnd", motionVisibleEnd: "motionVisibleEnd" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSheet, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSheet, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-sheet,[p-sheet]',
@@ -1596,10 +2445,10 @@ class PSpinner extends BaseComponentWithTheme {
     aria;
     size;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSpinner, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PSpinner, isStandalone: false, selector: "p-spinner,[p-spinner]", inputs: { aria: "aria", size: "size", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSpinner, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PSpinner, isStandalone: false, selector: "p-spinner,[p-spinner]", inputs: { aria: "aria", size: "size", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSpinner, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSpinner, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-spinner,[p-spinner]',
@@ -1615,10 +2464,10 @@ class PStepperHorizontal extends BaseComponentWithTheme {
     /** @deprecated */
     stepChange = new EventEmitter();
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PStepperHorizontal, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PStepperHorizontal, isStandalone: false, selector: "p-stepper-horizontal,[p-stepper-horizontal]", inputs: { size: "size", theme: "theme" }, outputs: { stepChange: "stepChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PStepperHorizontal, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PStepperHorizontal, isStandalone: false, selector: "p-stepper-horizontal,[p-stepper-horizontal]", inputs: { size: "size", theme: "theme" }, outputs: { stepChange: "stepChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PStepperHorizontal, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PStepperHorizontal, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-stepper-horizontal,[p-stepper-horizontal]',
@@ -1632,10 +2481,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
 class PStepperHorizontalItem extends BaseComponent {
     disabled;
     state;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PStepperHorizontalItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PStepperHorizontalItem, isStandalone: false, selector: "p-stepper-horizontal-item,[p-stepper-horizontal-item]", inputs: { disabled: "disabled", state: "state" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PStepperHorizontalItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PStepperHorizontalItem, isStandalone: false, selector: "p-stepper-horizontal-item,[p-stepper-horizontal-item]", inputs: { disabled: "disabled", state: "state" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PStepperHorizontalItem, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PStepperHorizontalItem, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-stepper-horizontal-item,[p-stepper-horizontal-item]',
@@ -1657,10 +2506,10 @@ class PSwitch extends BaseComponentWithTheme {
     /** @deprecated */
     switchChange = new EventEmitter();
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSwitch, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PSwitch, isStandalone: false, selector: "p-switch,[p-switch]", inputs: { alignLabel: "alignLabel", checked: "checked", compact: "compact", disabled: "disabled", hideLabel: "hideLabel", loading: "loading", stretch: "stretch", theme: "theme" }, outputs: { switchChange: "switchChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSwitch, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PSwitch, isStandalone: false, selector: "p-switch,[p-switch]", inputs: { alignLabel: "alignLabel", checked: "checked", compact: "compact", disabled: "disabled", hideLabel: "hideLabel", loading: "loading", stretch: "stretch", theme: "theme" }, outputs: { switchChange: "switchChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PSwitch, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PSwitch, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-switch,[p-switch]',
@@ -1679,10 +2528,10 @@ class PTable extends BaseComponentWithTheme {
     /** @deprecated */
     sortingChange = new EventEmitter();
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTable, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTable, isStandalone: false, selector: "p-table,[p-table]", inputs: { caption: "caption", compact: "compact", layout: "layout", theme: "theme" }, outputs: { sortingChange: "sortingChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTable, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTable, isStandalone: false, selector: "p-table,[p-table]", inputs: { caption: "caption", compact: "compact", layout: "layout", theme: "theme" }, outputs: { sortingChange: "sortingChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTable, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTable, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-table,[p-table]',
@@ -1694,10 +2543,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PTableBody extends BaseComponent {
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableBody, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTableBody, isStandalone: false, selector: "p-table-body,[p-table-body]", usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableBody, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTableBody, isStandalone: false, selector: "p-table-body,[p-table-body]", usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableBody, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableBody, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-table-body,[p-table-body]',
@@ -1708,10 +2557,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
 
 class PTableCell extends BaseComponent {
     multiline;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableCell, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTableCell, isStandalone: false, selector: "p-table-cell,[p-table-cell]", inputs: { multiline: "multiline" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableCell, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTableCell, isStandalone: false, selector: "p-table-cell,[p-table-cell]", inputs: { multiline: "multiline" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableCell, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableCell, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-table-cell,[p-table-cell]',
@@ -1722,10 +2571,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PTableHead extends BaseComponent {
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableHead, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTableHead, isStandalone: false, selector: "p-table-head,[p-table-head]", usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableHead, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTableHead, isStandalone: false, selector: "p-table-head,[p-table-head]", usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableHead, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableHead, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-table-head,[p-table-head]',
@@ -1738,10 +2587,10 @@ class PTableHeadCell extends BaseComponent {
     hideLabel;
     multiline;
     sort;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableHeadCell, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTableHeadCell, isStandalone: false, selector: "p-table-head-cell,[p-table-head-cell]", inputs: { hideLabel: "hideLabel", multiline: "multiline", sort: "sort" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableHeadCell, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTableHeadCell, isStandalone: false, selector: "p-table-head-cell,[p-table-head-cell]", inputs: { hideLabel: "hideLabel", multiline: "multiline", sort: "sort" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableHeadCell, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableHeadCell, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-table-head-cell,[p-table-head-cell]',
@@ -1752,10 +2601,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PTableHeadRow extends BaseComponent {
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableHeadRow, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTableHeadRow, isStandalone: false, selector: "p-table-head-row,[p-table-head-row]", usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableHeadRow, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTableHeadRow, isStandalone: false, selector: "p-table-head-row,[p-table-head-row]", usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableHeadRow, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableHeadRow, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-table-head-row,[p-table-head-row]',
@@ -1765,10 +2614,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PTableRow extends BaseComponent {
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableRow, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTableRow, isStandalone: false, selector: "p-table-row,[p-table-row]", usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableRow, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTableRow, isStandalone: false, selector: "p-table-row,[p-table-row]", usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTableRow, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTableRow, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-table-row,[p-table-row]',
@@ -1789,10 +2638,10 @@ class PTabs extends BaseComponentWithTheme {
     /** @deprecated */
     tabChange = new EventEmitter();
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTabs, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTabs, isStandalone: false, selector: "p-tabs,[p-tabs]", inputs: { activeTabIndex: "activeTabIndex", gradientColor: "gradientColor", gradientColorScheme: "gradientColorScheme", size: "size", theme: "theme", weight: "weight" }, outputs: { tabChange: "tabChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTabs, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTabs, isStandalone: false, selector: "p-tabs,[p-tabs]", inputs: { activeTabIndex: "activeTabIndex", gradientColor: "gradientColor", gradientColorScheme: "gradientColorScheme", size: "size", theme: "theme", weight: "weight" }, outputs: { tabChange: "tabChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTabs, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTabs, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-tabs,[p-tabs]',
@@ -1815,10 +2664,10 @@ class PTabsBar extends BaseComponentWithTheme {
     /** @deprecated */
     tabChange = new EventEmitter();
     update = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTabsBar, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTabsBar, isStandalone: false, selector: "p-tabs-bar,[p-tabs-bar]", inputs: { activeTabIndex: "activeTabIndex", gradientColor: "gradientColor", gradientColorScheme: "gradientColorScheme", size: "size", theme: "theme", weight: "weight" }, outputs: { tabChange: "tabChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTabsBar, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTabsBar, isStandalone: false, selector: "p-tabs-bar,[p-tabs-bar]", inputs: { activeTabIndex: "activeTabIndex", gradientColor: "gradientColor", gradientColorScheme: "gradientColorScheme", size: "size", theme: "theme", weight: "weight" }, outputs: { tabChange: "tabChange", update: "update" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTabsBar, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTabsBar, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-tabs-bar,[p-tabs-bar]',
@@ -1831,10 +2680,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
 
 class PTabsItem extends BaseComponent {
     label;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTabsItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTabsItem, isStandalone: false, selector: "p-tabs-item,[p-tabs-item]", inputs: { label: "label" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTabsItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTabsItem, isStandalone: false, selector: "p-tabs-item,[p-tabs-item]", inputs: { label: "label" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTabsItem, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTabsItem, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-tabs-item,[p-tabs-item]',
@@ -1845,20 +2694,22 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PTag extends BaseComponentWithTheme {
+    /** @deprecated */
     color;
     compact;
     icon;
     iconSource;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTag, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTag, isStandalone: false, selector: "p-tag,[p-tag]", inputs: { color: "color", compact: "compact", icon: "icon", iconSource: "iconSource", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    variant;
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTag, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTag, isStandalone: false, selector: "p-tag,[p-tag]", inputs: { color: "color", compact: "compact", icon: "icon", iconSource: "iconSource", theme: "theme", variant: "variant" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTag, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTag, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-tag,[p-tag]',
                     template: '<ng-content />',
-                    inputs: ['color', 'compact', 'icon', 'iconSource', 'theme'],
+                    inputs: ['color', 'compact', 'icon', 'iconSource', 'theme', 'variant'],
                     standalone: false
                 }]
         }] });
@@ -1866,17 +2717,18 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
 class PTagDismissible extends BaseComponentWithTheme {
     aria;
     color;
+    compact;
     label;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTagDismissible, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTagDismissible, isStandalone: false, selector: "p-tag-dismissible,[p-tag-dismissible]", inputs: { aria: "aria", color: "color", label: "label", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTagDismissible, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTagDismissible, isStandalone: false, selector: "p-tag-dismissible,[p-tag-dismissible]", inputs: { aria: "aria", color: "color", compact: "compact", label: "label", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTagDismissible, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTagDismissible, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-tag-dismissible,[p-tag-dismissible]',
                     template: '<ng-content />',
-                    inputs: ['aria', 'color', 'label', 'theme'],
+                    inputs: ['aria', 'color', 'compact', 'label', 'theme'],
                     standalone: false
                 }]
         }] });
@@ -1889,10 +2741,10 @@ class PText extends BaseComponentWithTheme {
     tag;
     theme;
     weight;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PText, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PText, isStandalone: false, selector: "p-text,[p-text]", inputs: { align: "align", color: "color", ellipsis: "ellipsis", size: "size", tag: "tag", theme: "theme", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PText, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PText, isStandalone: false, selector: "p-text,[p-text]", inputs: { align: "align", color: "color", ellipsis: "ellipsis", size: "size", tag: "tag", theme: "theme", weight: "weight" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PText, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PText, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-text,[p-text]',
@@ -1920,10 +2772,10 @@ class PTextFieldWrapper extends BaseComponentWithTheme {
     unit;
     unitPosition;
     action = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTextFieldWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTextFieldWrapper, isStandalone: false, selector: "p-text-field-wrapper,[p-text-field-wrapper]", inputs: { actionIcon: "actionIcon", actionLoading: "actionLoading", description: "description", hideLabel: "hideLabel", label: "label", message: "message", showCharacterCount: "showCharacterCount", showCounter: "showCounter", showPasswordToggle: "showPasswordToggle", state: "state", submitButton: "submitButton", theme: "theme", unit: "unit", unitPosition: "unitPosition" }, outputs: { action: "action" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTextFieldWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTextFieldWrapper, isStandalone: false, selector: "p-text-field-wrapper,[p-text-field-wrapper]", inputs: { actionIcon: "actionIcon", actionLoading: "actionLoading", description: "description", hideLabel: "hideLabel", label: "label", message: "message", showCharacterCount: "showCharacterCount", showCounter: "showCounter", showPasswordToggle: "showPasswordToggle", state: "state", submitButton: "submitButton", theme: "theme", unit: "unit", unitPosition: "unitPosition" }, outputs: { action: "action" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTextFieldWrapper, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTextFieldWrapper, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-text-field-wrapper,[p-text-field-wrapper]',
@@ -1941,10 +2793,10 @@ class PTextList extends BaseComponentWithTheme {
     orderType;
     theme;
     type;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTextList, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTextList, isStandalone: false, selector: "p-text-list,[p-text-list]", inputs: { listType: "listType", orderType: "orderType", theme: "theme", type: "type" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTextList, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTextList, isStandalone: false, selector: "p-text-list,[p-text-list]", inputs: { listType: "listType", orderType: "orderType", theme: "theme", type: "type" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTextList, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTextList, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-text-list,[p-text-list]',
@@ -1955,10 +2807,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PTextListItem extends BaseComponent {
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTextListItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTextListItem, isStandalone: false, selector: "p-text-list-item,[p-text-list-item]", usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTextListItem, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTextListItem, isStandalone: false, selector: "p-text-list-item,[p-text-list-item]", usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTextListItem, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTextListItem, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-text-list-item,[p-text-list-item]',
@@ -1968,7 +2820,11 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
         }] });
 
 class PTextarea extends BaseComponentWithTheme {
+    _renderer;
+    _elementRef;
+    _cdr;
     autoComplete;
+    compact;
     counter;
     description;
     disabled;
@@ -1992,19 +2848,56 @@ class PTextarea extends BaseComponentWithTheme {
     blur = new EventEmitter();
     change = new EventEmitter();
     input = new EventEmitter();
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTextarea, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTextarea, isStandalone: false, selector: "p-textarea,[p-textarea]", inputs: { autoComplete: "autoComplete", counter: "counter", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", placeholder: "placeholder", readOnly: "readOnly", required: "required", resize: "resize", rows: "rows", spellCheck: "spellCheck", state: "state", theme: "theme", value: "value", wrap: "wrap" }, outputs: { blur: "blur", change: "change", input: "input" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    constructor(_renderer, _elementRef, _cdr) {
+        super(_cdr, _elementRef);
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._cdr = _cdr;
+    }
+    _onChange = () => { };
+    _onTouched = () => { };
+    writeValue(value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    }
+    registerOnChange(fn) {
+        this._onChange = fn;
+    }
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    setDisabledState(isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTextarea, deps: [{ token: i0.Renderer2 }, { token: i0.ElementRef }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTextarea, isStandalone: false, selector: "p-textarea,[p-textarea]", inputs: { autoComplete: "autoComplete", compact: "compact", counter: "counter", description: "description", disabled: "disabled", form: "form", hideLabel: "hideLabel", label: "label", maxLength: "maxLength", message: "message", minLength: "minLength", name: "name", placeholder: "placeholder", readOnly: "readOnly", required: "required", resize: "resize", rows: "rows", spellCheck: "spellCheck", state: "state", theme: "theme", value: "value", wrap: "wrap" }, outputs: { blur: "blur", change: "change", input: "input" }, host: { listeners: { "input": "_onChange($event.target.value)", "blur": "_onTouched()" } }, providers: [
+            {
+                provide: NG_VALUE_ACCESSOR,
+                useExisting: forwardRef(() => PTextarea),
+                multi: true,
+            },
+        ], usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTextarea, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTextarea, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-textarea,[p-textarea]',
                     template: '<ng-content />',
-                    inputs: ['autoComplete', 'counter', 'description', 'disabled', 'form', 'hideLabel', 'label', 'maxLength', 'message', 'minLength', 'name', 'placeholder', 'readOnly', 'required', 'resize', 'rows', 'spellCheck', 'state', 'theme', 'value', 'wrap'],
+                    inputs: ['autoComplete', 'compact', 'counter', 'description', 'disabled', 'form', 'hideLabel', 'label', 'maxLength', 'message', 'minLength', 'name', 'placeholder', 'readOnly', 'required', 'resize', 'rows', 'spellCheck', 'state', 'theme', 'value', 'wrap'],
                     outputs: ['blur', 'change', 'input'],
-                    standalone: false
+                    standalone: false,
+                    providers: [
+                        {
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(() => PTextarea),
+                            multi: true,
+                        },
+                    ],
+                    host: {
+                        '(input)': '_onChange($event.target.value)',
+                        '(blur)': '_onTouched()'
+                    }
                 }]
-        }] });
+        }], ctorParameters: () => [{ type: i0.Renderer2 }, { type: i0.ElementRef }, { type: i0.ChangeDetectorRef }] });
 
 /** @deprecated since v3.29.0, will be removed with next major release. Please use `p-textarea` instead. */
 class PTextareaWrapper extends BaseComponentWithTheme {
@@ -2017,10 +2910,10 @@ class PTextareaWrapper extends BaseComponentWithTheme {
     showCounter;
     state;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTextareaWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PTextareaWrapper, isStandalone: false, selector: "p-textarea-wrapper,[p-textarea-wrapper]", inputs: { description: "description", hideLabel: "hideLabel", label: "label", message: "message", showCharacterCount: "showCharacterCount", showCounter: "showCounter", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTextareaWrapper, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PTextareaWrapper, isStandalone: false, selector: "p-textarea-wrapper,[p-textarea-wrapper]", inputs: { description: "description", hideLabel: "hideLabel", label: "label", message: "message", showCharacterCount: "showCharacterCount", showCounter: "showCounter", state: "state", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PTextareaWrapper, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PTextareaWrapper, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-textarea-wrapper,[p-textarea-wrapper]',
@@ -2032,10 +2925,10 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
 
 class PToast extends BaseComponentWithTheme {
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PToast, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PToast, isStandalone: false, selector: "p-toast,[p-toast]", inputs: { theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PToast, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PToast, isStandalone: false, selector: "p-toast,[p-toast]", inputs: { theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PToast, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PToast, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-toast,[p-toast]',
@@ -2051,10 +2944,10 @@ class PWordmark extends BaseComponentWithTheme {
     size;
     target;
     theme;
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PWordmark, deps: null, target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "20.1.2", type: PWordmark, isStandalone: false, selector: "p-wordmark,[p-wordmark]", inputs: { aria: "aria", href: "href", size: "size", target: "target", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PWordmark, deps: null, target: i0.ɵɵFactoryTarget.Component });
+    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "21.1.1", type: PWordmark, isStandalone: false, selector: "p-wordmark,[p-wordmark]", inputs: { aria: "aria", href: "href", size: "size", target: "target", theme: "theme" }, usesInheritance: true, ngImport: i0, template: '<ng-content />', isInline: true });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PWordmark, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PWordmark, decorators: [{
             type: Component,
             args: [{
                     selector: 'p-wordmark,[p-wordmark]',
@@ -2066,6 +2959,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
 
 const DECLARATIONS = [
     PAccordion,
+    PAiTag,
     PBanner,
     PButton,
     PButtonGroup,
@@ -2096,6 +2990,7 @@ const DECLARATIONS = [
     PInlineNotification,
     PInputDate,
     PInputEmail,
+    PInputMonth,
     PInputNumber,
     PInputPassword,
     PInputSearch,
@@ -2103,6 +2998,7 @@ const DECLARATIONS = [
     PInputText,
     PInputTime,
     PInputUrl,
+    PInputWeek,
     PLink,
     PLinkPure,
     PLinkSocial,
@@ -2119,6 +3015,8 @@ const DECLARATIONS = [
     PPinCode,
     PPopover,
     PRadioButtonWrapper,
+    PRadioGroup,
+    PRadioGroupOption,
     PScroller,
     PSegmentedControl,
     PSegmentedControlItem,
@@ -2176,16 +3074,16 @@ class PorscheDesignSystemModule {
             ],
         };
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PorscheDesignSystemModule, deps: [{ token: DefaultConfig, optional: true }], target: i0.ɵɵFactoryTarget.NgModule });
-    static ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "20.1.2", ngImport: i0, type: PorscheDesignSystemModule, declarations: [PAccordion, PBanner, PButton, PButtonGroup, PButtonPure, PButtonTile, PCanvas, PCarousel, PCheckbox, PCheckboxWrapper, PContentWrapper, PCrest, PDisplay, PDivider, PDrilldown, PDrilldownItem, PDrilldownLink, PFieldset, PFieldsetWrapper, PFlag, PFlex, PFlexItem, PFlyout, PGrid, PGridItem, PHeading, PHeadline, PIcon, PInlineNotification, PInputDate, PInputEmail, PInputNumber, PInputPassword, PInputSearch, PInputTel, PInputText, PInputTime, PInputUrl, PLink, PLinkPure, PLinkSocial, PLinkTile, PLinkTileModelSignature, PLinkTileProduct, PMarque, PModal, PModelSignature, PMultiSelect, PMultiSelectOption, POptgroup, PPagination, PPinCode, PPopover, PRadioButtonWrapper, PScroller, PSegmentedControl, PSegmentedControlItem, PSelect, PSelectOption, PSelectWrapper, PSheet, PSpinner, PStepperHorizontal, PStepperHorizontalItem, PSwitch, PTable, PTableBody, PTableCell, PTableHead, PTableHeadCell, PTableHeadRow, PTableRow, PTabs, PTabsBar, PTabsItem, PTag, PTagDismissible, PText, PTextFieldWrapper, PTextList, PTextListItem, PTextarea, PTextareaWrapper, PToast, PWordmark], exports: [PAccordion, PBanner, PButton, PButtonGroup, PButtonPure, PButtonTile, PCanvas, PCarousel, PCheckbox, PCheckboxWrapper, PContentWrapper, PCrest, PDisplay, PDivider, PDrilldown, PDrilldownItem, PDrilldownLink, PFieldset, PFieldsetWrapper, PFlag, PFlex, PFlexItem, PFlyout, PGrid, PGridItem, PHeading, PHeadline, PIcon, PInlineNotification, PInputDate, PInputEmail, PInputNumber, PInputPassword, PInputSearch, PInputTel, PInputText, PInputTime, PInputUrl, PLink, PLinkPure, PLinkSocial, PLinkTile, PLinkTileModelSignature, PLinkTileProduct, PMarque, PModal, PModelSignature, PMultiSelect, PMultiSelectOption, POptgroup, PPagination, PPinCode, PPopover, PRadioButtonWrapper, PScroller, PSegmentedControl, PSegmentedControlItem, PSelect, PSelectOption, PSelectWrapper, PSheet, PSpinner, PStepperHorizontal, PStepperHorizontalItem, PSwitch, PTable, PTableBody, PTableCell, PTableHead, PTableHeadCell, PTableHeadRow, PTableRow, PTabs, PTabsBar, PTabsItem, PTag, PTagDismissible, PText, PTextFieldWrapper, PTextList, PTextListItem, PTextarea, PTextareaWrapper, PToast, PWordmark] });
-    static ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PorscheDesignSystemModule, providers: [
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PorscheDesignSystemModule, deps: [{ token: DefaultConfig, optional: true }], target: i0.ɵɵFactoryTarget.NgModule });
+    static ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "21.1.1", ngImport: i0, type: PorscheDesignSystemModule, declarations: [PAccordion, PAiTag, PBanner, PButton, PButtonGroup, PButtonPure, PButtonTile, PCanvas, PCarousel, PCheckbox, PCheckboxWrapper, PContentWrapper, PCrest, PDisplay, PDivider, PDrilldown, PDrilldownItem, PDrilldownLink, PFieldset, PFieldsetWrapper, PFlag, PFlex, PFlexItem, PFlyout, PGrid, PGridItem, PHeading, PHeadline, PIcon, PInlineNotification, PInputDate, PInputEmail, PInputMonth, PInputNumber, PInputPassword, PInputSearch, PInputTel, PInputText, PInputTime, PInputUrl, PInputWeek, PLink, PLinkPure, PLinkSocial, PLinkTile, PLinkTileModelSignature, PLinkTileProduct, PMarque, PModal, PModelSignature, PMultiSelect, PMultiSelectOption, POptgroup, PPagination, PPinCode, PPopover, PRadioButtonWrapper, PRadioGroup, PRadioGroupOption, PScroller, PSegmentedControl, PSegmentedControlItem, PSelect, PSelectOption, PSelectWrapper, PSheet, PSpinner, PStepperHorizontal, PStepperHorizontalItem, PSwitch, PTable, PTableBody, PTableCell, PTableHead, PTableHeadCell, PTableHeadRow, PTableRow, PTabs, PTabsBar, PTabsItem, PTag, PTagDismissible, PText, PTextFieldWrapper, PTextList, PTextListItem, PTextarea, PTextareaWrapper, PToast, PWordmark], exports: [PAccordion, PAiTag, PBanner, PButton, PButtonGroup, PButtonPure, PButtonTile, PCanvas, PCarousel, PCheckbox, PCheckboxWrapper, PContentWrapper, PCrest, PDisplay, PDivider, PDrilldown, PDrilldownItem, PDrilldownLink, PFieldset, PFieldsetWrapper, PFlag, PFlex, PFlexItem, PFlyout, PGrid, PGridItem, PHeading, PHeadline, PIcon, PInlineNotification, PInputDate, PInputEmail, PInputMonth, PInputNumber, PInputPassword, PInputSearch, PInputTel, PInputText, PInputTime, PInputUrl, PInputWeek, PLink, PLinkPure, PLinkSocial, PLinkTile, PLinkTileModelSignature, PLinkTileProduct, PMarque, PModal, PModelSignature, PMultiSelect, PMultiSelectOption, POptgroup, PPagination, PPinCode, PPopover, PRadioButtonWrapper, PRadioGroup, PRadioGroupOption, PScroller, PSegmentedControl, PSegmentedControlItem, PSelect, PSelectOption, PSelectWrapper, PSheet, PSpinner, PStepperHorizontal, PStepperHorizontalItem, PSwitch, PTable, PTableBody, PTableCell, PTableHead, PTableHeadCell, PTableHeadRow, PTableRow, PTabs, PTabsBar, PTabsItem, PTag, PTagDismissible, PText, PTextFieldWrapper, PTextList, PTextListItem, PTextarea, PTextareaWrapper, PToast, PWordmark] });
+    static ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PorscheDesignSystemModule, providers: [
             {
                 provide: THEME_TOKEN,
                 useValue: new BehaviorSubject('light'),
             },
         ] });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: PorscheDesignSystemModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: PorscheDesignSystemModule, decorators: [{
             type: NgModule,
             args: [{
                     declarations: DECLARATIONS,
@@ -2206,10 +3104,10 @@ class ToastManager {
         const toast = document.body.querySelector('p-toast,[p-toast]');
         customElements.whenDefined(toast.tagName.toLowerCase()).then(() => toast.addMessage(message));
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: ToastManager, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: ToastManager, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: ToastManager, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: ToastManager, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImport: i0, type: ToastManager, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.1.1", ngImport: i0, type: ToastManager, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root',
@@ -2220,5 +3118,5 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.1.2", ngImpor
  * Generated bundle index. Do not edit.
  */
 
-export { DECLARATIONS, PAccordion, PBanner, PButton, PButtonGroup, PButtonPure, PButtonTile, PCanvas, PCarousel, PCheckbox, PCheckboxWrapper, PContentWrapper, PCrest, PDisplay, PDivider, PDrilldown, PDrilldownItem, PDrilldownLink, PFieldset, PFieldsetWrapper, PFlag, PFlex, PFlexItem, PFlyout, PGrid, PGridItem, PHeading, PHeadline, PIcon, PInlineNotification, PInputDate, PInputEmail, PInputNumber, PInputPassword, PInputSearch, PInputTel, PInputText, PInputTime, PInputUrl, PLink, PLinkPure, PLinkSocial, PLinkTile, PLinkTileModelSignature, PLinkTileProduct, PMarque, PModal, PModelSignature, PMultiSelect, PMultiSelectOption, POptgroup, PPagination, PPinCode, PPopover, PRadioButtonWrapper, PScroller, PSegmentedControl, PSegmentedControlItem, PSelect, PSelectOption, PSelectWrapper, PSheet, PSpinner, PStepperHorizontal, PStepperHorizontalItem, PSwitch, PTable, PTableBody, PTableCell, PTableHead, PTableHeadCell, PTableHeadRow, PTableRow, PTabs, PTabsBar, PTabsItem, PTag, PTagDismissible, PText, PTextFieldWrapper, PTextList, PTextListItem, PTextarea, PTextareaWrapper, PToast, PWordmark, PorscheDesignSystemModule, THEME_TOKEN, ToastManager };
+export { DECLARATIONS, PAccordion, PAiTag, PBanner, PButton, PButtonGroup, PButtonPure, PButtonTile, PCanvas, PCarousel, PCheckbox, PCheckboxWrapper, PContentWrapper, PCrest, PDisplay, PDivider, PDrilldown, PDrilldownItem, PDrilldownLink, PFieldset, PFieldsetWrapper, PFlag, PFlex, PFlexItem, PFlyout, PGrid, PGridItem, PHeading, PHeadline, PIcon, PInlineNotification, PInputDate, PInputEmail, PInputMonth, PInputNumber, PInputPassword, PInputSearch, PInputTel, PInputText, PInputTime, PInputUrl, PInputWeek, PLink, PLinkPure, PLinkSocial, PLinkTile, PLinkTileModelSignature, PLinkTileProduct, PMarque, PModal, PModelSignature, PMultiSelect, PMultiSelectOption, POptgroup, PPagination, PPinCode, PPopover, PRadioButtonWrapper, PRadioGroup, PRadioGroupOption, PScroller, PSegmentedControl, PSegmentedControlItem, PSelect, PSelectOption, PSelectWrapper, PSheet, PSpinner, PStepperHorizontal, PStepperHorizontalItem, PSwitch, PTable, PTableBody, PTableCell, PTableHead, PTableHeadCell, PTableHeadRow, PTableRow, PTabs, PTabsBar, PTabsItem, PTag, PTagDismissible, PText, PTextFieldWrapper, PTextList, PTextListItem, PTextarea, PTextareaWrapper, PToast, PWordmark, PorscheDesignSystemModule, THEME_TOKEN, ToastManager };
 //# sourceMappingURL=porsche-design-system-components-angular.mjs.map

@@ -31,21 +31,21 @@
     ]
   },
   "dependencies": {
-    "@angular/common": "^20.1.0",
-    "@angular/compiler": "^20.1.0",
-    "@angular/core": "^20.1.0",
-    "@angular/forms": "^20.1.0",
-    "@angular/platform-browser": "^20.1.0",
-    "@angular/router": "^20.1.0",
-    "@porsche-design-system/components-angular": "^3.29.0",
+    "@angular/common": "^21.2.12",
+    "@angular/compiler": "^21.2.12",
+    "@angular/core": "^21.2.12",
+    "@angular/forms": "^21.2.12",
+    "@angular/platform-browser": "^21.2.12",
+    "@angular/router": "^21.2.12",
+    "@porsche-design-system/components-angular": "^3.35.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^20.0.0",
-    "@angular/build": "^20.1.4",
-    "@angular/cli": "^20.1.4",
-    "@angular/compiler-cli": "^20.1.0",
+    "@angular-builders/custom-webpack": "^21.0.3",
+    "@angular/build": "^21.2.10",
+    "@angular/cli": "^21.2.10",
+    "@angular/compiler-cli": "^21.2.12",
     "@playwright/test": "^1.55.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.10.0",
@@ -58,6 +58,7 @@
     "typescript": "~5.9.2"
   },
   "volta": {
-    "node": "22.12.0"
+    "node": "24.15.0",
+    "npm": "11.12.1"
   }
 }
