@@ -1,11 +1,11 @@
-# Porsche Design System for Angular (Offline Build v3.29.0)
+# Porsche Design System for Angular (Offline Build v3.35.0)
 
 ## About
 
 This repository demonstrates how to integrate the Porsche Design System with **Angular** using a specialized offline build.
 This is particularly useful for applications that need to function without an internet connection.
 
-A custom offline build of the Porsche Design System `v3.29.0` npm package is located in `./@porsche-design-system/components-{js|angular}`.
+A custom offline build of the Porsche Design System `v3.35.0` npm package is located in `./@porsche-design-system/components-{js|angular}`.
 This build is designed for offline use and does not retrieve assets from the global CDN (`https://cdn.ui.porsche.com` or `https://cdn.ui.porsche.cn`).
 
 Instead, it expects all assets — such as fonts, icons, and web components — to be served from `${YOUR_BASE_URL}/assets/porsche-design-system/`.
@@ -58,10 +58,10 @@ Instead, we have to disable the entire Angular cache.
 
 ### Step 4
 
-Add the `@porsche-design-system/components-angular` npm package with version `3.29.0`.
+Add the `@porsche-design-system/components-angular` npm package with version `3.35.0`.
 
 ```
-npm install @porsche-design-system/components-angular@3.29.0
+npm install @porsche-design-system/components-angular@3.35.0
 ```
 
 ### Step 5
