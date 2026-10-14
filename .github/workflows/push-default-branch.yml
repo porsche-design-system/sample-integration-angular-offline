@@ -10,12 +10,12 @@ jobs:
     name: 'Build'
     uses: ./.github/workflows/build.yml
     with:
-      image: mcr.microsoft.com/playwright:v1.55.0
+      image: mcr.microsoft.com/playwright:v1.64.0
   test:
     name: 'Test'
     uses: ./.github/workflows/test.yml
     with:
-      image: mcr.microsoft.com/playwright:v1.55.0
+      image: mcr.microsoft.com/playwright:v1.64.0
     needs:
       - build
   deploy:

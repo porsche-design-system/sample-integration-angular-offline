@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@porsche-design-system/components-angular/index.css';
+
+:is(p-button, p-flag, p-wordmark):not(:defined) {
+  visibility: hidden;
+}

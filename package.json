@@ -18,7 +18,10 @@
     "npm:outdated": "npm outdated",
     "npm:upgrade": "npx npm-check-updates -u && npm install",
     "npm:remove": "find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \\;",
-    "npm:clean": "npm cache clean --force"
+    "npm:clean": "npm cache clean --force",
+    "prebuild": "node prebuild.mjs",
+    "prestart": "node prebuild.mjs",
+    "prewatch": "node prebuild.mjs"
   },
   "prettier": {
     "overrides": [
@@ -37,29 +40,22 @@
     "@angular/forms": "^22.2.2",
     "@angular/platform-browser": "^22.2.2",
     "@angular/router": "^22.2.2",
-    "@porsche-design-system/components-angular": "^3.35.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "@porsche-design-system/components-angular": "4.8.0",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^22.0.1",
     "@angular/build": "^22.2.2",
     "@angular/cli": "^22.2.2",
     "@angular/compiler-cli": "^22.2.2",
-    "@playwright/test": "^1.55.0",
-    "@types/jasmine": "~5.1.0",
-    "istanbul-lib-instrument": "^6.0.3",
-    "jasmine-core": "~5.10.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "serve": "^14.2.4",
-    "typescript": "~6.0.3"
+    "@playwright/test": "^1.64.0",
+    "jsdom": "^30.1.2",
+    "serve": "^14.2.6",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.0"
   },
   "volta": {
-    "node": "24.15.0",
-    "npm": "11.12.1"
+    "node": "24.17.0",
+    "npm": "11.13.0"
   }
 }
